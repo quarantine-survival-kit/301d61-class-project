@@ -4,8 +4,9 @@
 
 function signInToggle() {
   $('#signIn').on('click', function() {
-    $('#signIn').toggleClass('extended');
-    $('#userInfo').toggleClass('display');
+    $('#signIn').toggleClass('extended')
+    $('#userInfo').toggleClass('display', 'slow');
+
   });
 
 }
@@ -23,7 +24,7 @@ darkModeToggle();
 
 
 function movieForm() {
-  $('#movies').on('click', function() {
+  $('#movieImage').on('click', function() {
     $('#movies form').toggle('slow');
     $('#movies h2').toggleClass('form');
     $('#movies svg').toggleClass('form');
@@ -33,7 +34,7 @@ function movieForm() {
 movieForm();
 
 function bookForm() {
-  $('#books').on('click', function() {
+  $('#bookImage').on('click', function() {
     $('#books form').toggle('slow');
     $('#books h2').toggleClass('form');
     $('#books svg').toggleClass('form');
@@ -43,7 +44,7 @@ function bookForm() {
 bookForm();
 
 function recipeForm() {
-  $('#recipes').on('click', function() {
+  $('#recipeImage').on('click', function() {
     $('#recipes form').toggle('slow');
     $('#recipes h2').toggleClass('form');
     $('#recipes svg').toggleClass('form');
