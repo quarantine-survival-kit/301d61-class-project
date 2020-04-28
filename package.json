@@ -1,0 +1,30 @@
+{
+  "name": "301d61-class-project",
+  "version": "1.0.0",
+  "description": "Class 301d61 project ",
+  "main": "server.js",
+  "scripts": {
+    "test": "'hello world'",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quarantine-survival-kit/301d61-class-project.git"
+  },
+  "author": "Joe Pennock, Paul Depew, Volha Charnysh, Kent Sheats",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/quarantine-survival-kit/301d61-class-project/issues"
+  },
+  "homepage": "https://github.com/quarantine-survival-kit/301d61-class-project#readme",
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.2",
+    "express": "^4.17.1",
+    "method-override": "^3.0.0",
+    "pg": "^8.0.3",
+    "superagent": "^5.2.2"
+  }
+}
