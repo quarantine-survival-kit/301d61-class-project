@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const chalk = require('chalk');
 const log = console.log;
@@ -44,12 +44,16 @@ app.use(express.static('./public'));
 
 // CRUD routes
 // app.get('/error', errorHandler);
-app.get('/test', (request, response) => {
-  response.render('index')
+app.get('/', (request, response) => {
+  response.render('index');
+});
+
+app.get('/details', (request, response) => {
+  response.render('details');
 });
 
 // Start server listening for requests
 app.listen( PORT, (request, response) => {
-  log(chalk.yellowBright.bold.underline('Server is listening on PORT ' + PORT))
+  log(chalk.yellowBright.bold.underline('Server is listening on PORT ' + PORT));
 });
 
