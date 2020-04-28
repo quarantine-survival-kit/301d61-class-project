@@ -49,9 +49,9 @@ app.get('/', (request, response) => {
   response.render('index');
 });
 
-app.get('/details', (request, response) => {
-  response.render('details');
-});
+// app.get('/details', (request, response) => {
+//   response.render('details');
+// });
 
 app.get('/favorites', (request, response) => {
   response.render('favorites');
