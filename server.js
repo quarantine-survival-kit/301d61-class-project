@@ -19,6 +19,7 @@ const pg = require('pg');
 const methodOverride = require('method-override');
 const PORT = process.env.PORT || 3000;
 const app = express();
+const recipe = require('./modules/recipes');
 
 // Creates express instance and EJS setup
 app.set('view engine', 'ejs');
@@ -81,6 +82,12 @@ app.get('/', (request, response) => {
 app.get('/details', (request, response) => {
   response.render('details');
 });
+
+app.get('/favorites', (request, response) => {
+  response.render('favorites');
+});
+
+app.post('/recipeSearch', recipe.getRecipes);
 
 // Start server listening for requests
 app.listen( PORT, (request, response) => {
