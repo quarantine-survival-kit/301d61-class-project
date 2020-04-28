@@ -53,6 +53,10 @@ app.get('/details', (request, response) => {
   response.render('details');
 });
 
+app.get('/favorites', (request, response) => {
+  response.render('favorites');
+});
+
 app.post('/recipeSearch', recipe.getRecipes);
 
 // Start server listening for requests
