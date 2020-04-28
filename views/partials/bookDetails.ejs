@@ -8,12 +8,12 @@
   <p>Genre:  <%= element.genre %> </p>
   <a href="<%= element.retail_link %> ">Buy On Amazon</a>
    <form class='hiddenData' action='/details' method="POST">
-    <input class="info" type="text" name="title" value=' recipe.title'>
-    <input class="info" type="text" name="ingredients" value=' recipe.ingredients'>
-    <input class="info" type="text" name="calories" value=' recipe.calories '>
-    <input class="info" type="text" name="steps" value=' recipe.steps'>
-    <input class="info" type="text" name="image_url" value='recipe.image_url'>
-    <input class="info"type="text" name="healthLabels" value=' recipe.healthLeables '>
+    <input class="info" type="text" name="title" value=' <%= element.title %>'>
+    <input class="info" type="text" name="author" value=' <%= element.author %>'>
+    <input class="info" type="text" name="synopsis" value=' <%= element.synopsis %> '>
+    <input class="info" type="text" name="genre" value=' <%= element.genre %>'>
+    <input class="info" type="text" name="image_url" value='<%= element.img_url %>'>
+    <input class="info"type="text" name="retail_link" value=' <%= element.retail_link %> '>
     <button type='submit'>Save your recipe!</button>
    </form>
 </div>
