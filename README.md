@@ -27,6 +27,7 @@ This an an app that allows a user to search for movies, recipes, and books.  The
 ## Getting Started
 Install dependencies
 
+
 ## Architecture
 - EJS
 - Express
@@ -41,6 +42,10 @@ Install dependencies
 
 ## Change Log
 
+## Version History
+<!-- Key: major.minor.patch  -->
+* 1.0.0 20200428
+  - Project repo created. Added basic file structure.
 
 ## Credits and Collaborations
 
@@ -49,20 +54,20 @@ Install dependencies
 *As a user I would like to have a clean, simple UI where I can enter a category that I want to learn more about and be presented with a random selection of things based off that category: ie: workout routines, movies, wines, travel destinations, books, new hobby, meetups, recipes based on place*
 
 1. Server with saved items that can randomly generate/suggest
-1. Movies based on popularity
-1. Display options based on search
-1. Recipes based off of cuisines type
-1. Show recipes
-1. Steps, Ingredients
-1. Save a grocery list
-1. Show grocery store near this location
-1. Books 
-1. Display a Selection of books,
-1. Click on book, gives similar books
-1. Same genre?
-1. Synthesized User Profile creation and sign-in 
-1. Persistent cookie to keep signed in?
-1. 10-15 minute time frame? Cookies
+2. Movies based on popularity
+3. Display options based on search
+4. Recipes based off of cuisines type
+5. Show recipes
+6. Steps, Ingredients
+7. Save a grocery list
+8. Show grocery store near this location
+9. Books 
+10. Display a Selection of books,
+11. Click on book, gives similar books
+12. Same genre?
+13. Synthesized User Profile creation and sign-in 
+14. Persistent cookie to keep signed in?
+15. 10-15 minute time frame? Cookies
 
 [Return to top](#301d61-class-project)
 ## USER STORIES:
@@ -71,12 +76,14 @@ Install dependencies
 - I, as a user, would like the site I interact with often to remember my settings and choices.
 - Create a sign-in/up form which saves a user profile to the DB
 - Can save and recall/sign-in a user
+
 ### Story 2:
 #### Movie recommendations
 - I, as a user, would like to search for movie recommendations based on genre, director or title.
 Given the user inputs a valid genre or title, when they click on a button and then the top 10 movie recommendations are displayed on the /display page.
 - The user can view and save the movie recommendations to the database.  The display will include title, synopsis, director, image, genre, popularity, and run time.
 - Stretch Goal: Display a random movie recommendation.
+
 ### Story 3:
 #### Recipes
 - I, as a user, would like to search for a cuisine type and receive recipe ideas based on my search.
@@ -92,8 +99,10 @@ Given the user inputs a valid genre or title, when they click on a button and th
 - The user can view and save the books that they like to the database.  The display will include title, synopsis, author, image.
 - Stretch Goal: After a recommendation is chosen allow the user to click on a button and generate 10 more recommendations based on this title.
 - Stretch Goal: Display a link to a retailer to purchase the book.
+
 ### Other Stretch Goals:
 - Exercise recommendations.
+- Beverage selections.
 - Bored API display random ideas of new activities to kill time
 
 [Return to top](#301d61-class-project)
@@ -184,3 +193,4 @@ The user will have the ability to remove saved items from their profile.
 ![img](assets/diagrams/Web-Wireframe-About-Us.jpg)
 
 - [Return to top](#301d61-class-project)
+
