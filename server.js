@@ -52,6 +52,10 @@ app.get('/details', (request, response) => {
   response.render('details');
 });
 
+app.get('/favorites', (request, response) => {
+  response.render('favorites');
+});
+
 // Start server listening for requests
 app.listen( PORT, (request, response) => {
   log(chalk.yellowBright.bold.underline('Server is listening on PORT ' + PORT));
