@@ -35,7 +35,7 @@ function Movie (movie) {
   this.release_date = movie.release_date;
 }
 
-app.get('/index', collectMovieData);
+app.post('/movies', collectMovieData);
 
 function collectMovieData (request, response) {
   const query = request.query.search_query;
@@ -49,7 +49,7 @@ function collectMovieData (request, response) {
       console.log(data);
       let movies = [];
       data.map(item => movies.push(new Movie(item)));
-      response.render('index', { movies: movies});
+      response.render('details', { movies });
 
     })
 
