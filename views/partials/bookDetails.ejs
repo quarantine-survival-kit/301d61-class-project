@@ -1,11 +1,13 @@
 <div class='recipe'>
-  <h2>Title</h2>
-  <p>Calories</p>
-  <p>Health Labels</p>
-  <a href='stepURL'>
-    <img src='https://via.placeholder.com/100' alt='placeholder'>
-   </a>
-   <form class='hiddenData' action='' method="POST">
+  <img src=" <%= element.img_url %> ">
+  <h2>Title <%= element.title %>  </h2>
+  <h3>Author <%= element.author %> </h3>
+  <div class="book-synopsis-container">
+    <p class="book-synopsis">Synopsis <%= element.synopsis %> </p>
+  </div>
+  <p>Genre:  <%= element.genre %> </p>
+  <a href="<%= element.retail_link %> ">Buy On Amazon</a>
+   <form class='hiddenData' action='/details' method="POST">
     <input class="info" type="text" name="title" value=' recipe.title'>
     <input class="info" type="text" name="ingredients" value=' recipe.ingredients'>
     <input class="info" type="text" name="calories" value=' recipe.calories '>

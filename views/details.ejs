@@ -50,7 +50,9 @@ style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-w
   <article id='booksDetails' class="details">
     <h1>BOOKS!</h1>
     <div class="holder">
-      <%- include('./partials/bookDetails') %>
+      <% queryResults.forEach(element => { %>    
+        <%- include('./partials/bookDetails', {element}) %>
+      <% }) %> 
     </div>
 
   </article>

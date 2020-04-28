@@ -48,8 +48,8 @@ function Book(item) {
 
 //Function to call Google Books API and return results
 function callBookAPI (request, response) {
-  let {search} = request.body;
-  const bookUrl = `https://www.googleapis.com/books/v1/volumes?q=${search}`;
+  let {book_search_input} = request.body;
+  const bookUrl = `https://www.googleapis.com/books/v1/volumes?q=${book_search_input}`;
 
   superagent.get(bookUrl)
     .then( bookQuery => {
@@ -57,20 +57,20 @@ function callBookAPI (request, response) {
       return data.map( item => new Book(item))
     })
     .then ( queryResults => {
-      response.render('./index', {queryResults})
+      response.render('./details', {queryResults})
     })
-    .catch( error => errorHandler('Problem with API', request, response))
+    .catch( error => errorHandler('Problem with Book API', request, response))
 }
 
 // Function to handle all errors and render a new error page
 function errorHandler(error, request, response) {
   log(chalk.redBright(error));
-  response.render('error');
+  response.send(error);
 }
 
 // CRUD routes
 // app.get('/error', errorHandler);
-app.post('/search', callBookAPI);
+app.post('/bookSearch', callBookAPI);
 app.get('/', (request, response) => {
   response.render('index');
 });
@@ -82,5 +82,5 @@ app.get('/details', (request, response) => {
 
 // Start server listening for requests
 app.listen( PORT, (request, response) => {
-  log(chalk.yellowBright.bold.underline('Server is listening on PORT ' + PORT));
+  log(chalk.cyanBright.bold.underline('Server is listening on PORT ' + PORT));
 });
