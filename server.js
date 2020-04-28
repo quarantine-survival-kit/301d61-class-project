@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const chalk = require('chalk');
 const log = console.log;
@@ -71,25 +71,16 @@ function errorHandler(error, request, response) {
 // CRUD routes
 // app.get('/error', errorHandler);
 app.post('/search', callBookAPI);
-app.get('/test', (request, response) => {
-  response.render('search')
+app.get('/', (request, response) => {
+  response.render('index');
 });
 
-// Start server listening for requests
-app.listen( PORT, () => {
-  const today = new Date();
-  let dd = today.getDate();
-  if(dd < 10) dd = "0" + dd;
-  let mm = today.getMonth() + 1;
-  if(mm < 10) mm = "0" + mm;
-  const yyyy = today.getFullYear();
-  let hh = today.getHours();
-  if(hh < 10) hh = "0" + hh;
-  let ii = today.getMinutes();
-  if(ii < 10) ii = "0" + ii;
-  let ss = today.getSeconds();
-  if(ss < 10) ss = "0" + ss;
-  log(chalk.green("[nodemon]", `${yyyy}-${mm}-${dd} ${hh}:${ii}:${ss}`));
-  log(chalk.cyanBright.bold.underline('Server is running on PORT ' + PORT));
-})
+app.get('/details', (request, response) => {
+  response.render('details');
+});
 
+
+// Start server listening for requests
+app.listen( PORT, (request, response) => {
+  log(chalk.yellowBright.bold.underline('Server is listening on PORT ' + PORT));
+});
