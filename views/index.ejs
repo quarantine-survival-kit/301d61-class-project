@@ -47,8 +47,8 @@ style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-w
 </svg>
 <h2>Movies</h2>
 
-<form id='movieForm'>
-  <input type="text" class='info' name="query" placeholder="SEARCH!" >
+<form id='movieForm' action="/movieSearch" method="POST">
+  <input type="text" class='info' name="movieSearchInput" placeholder="SEARCH for MOVIES!" >
 <button type="submit">SEARCH MOVIES!</button>
 </form>
 </article>
