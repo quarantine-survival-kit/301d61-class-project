@@ -1,13 +1,16 @@
 'use strict'
 
+const chalk = require('chalk');
 const superagent = require('superagent');
 const errorHandler = require('./error');
+const pg = require('pg');
+
 
 // Constructor function used to generate books based on API results
 function Book(item) {
   this.title = item.volumeInfo.title ? item.volumeInfo.title : 'No title information available';
   this.author = item.volumeInfo.authors ? item.volumeInfo.authors[0] : 'No author information available';
-  this.synopsis = item.volumeInfo.description ? item.volumeInfo.description : item.searchInfo.textSnippet
+  this.synopsis = item.volumeInfo.description ? item.volumeInfo.description : 'No description available'
   this.img_url = item.volumeInfo.imageLinks ? item.volumeInfo.imageLinks.smallThumbnail : 'https://i.imgur.com/J5LVHEL.jpg';
   this.genre = item.volumeInfo.categories ? item.volumeInfo.categories : 'No genre info available';
   this.retail_link = item.volumeInfo.title ? `https://www.amazon.com/s/k=${item.volumeInfo.title}` : 'No retail link available.';

@@ -21,6 +21,7 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 const recipe = require('./modules/recipes');
 const book = require('./modules/books');
+const saveBook = require('./modules/saveBooks')
 const movie = require('./modules/movies');
 
 
@@ -56,6 +57,7 @@ app.get('/favorites', (request, response) => {
 
 app.post('/recipeSearch', recipe.getRecipes);
 app.post('/bookSearch', book.callBooksAPI);
+app.post('/favorites', saveBook.addBookToDB);
 app.post('/movieSearch', movie.collectMovieData);
 
 // Start server listening for requests
