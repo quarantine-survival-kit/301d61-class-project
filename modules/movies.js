@@ -14,7 +14,6 @@ function Movie (movie) {
 
 exports.collectMovieData = function(request, response) {
   const query = request.body.movieSearchInput;
-  console.log(query);
   const key = process.env.MOVIE_API_KEY;
   const url = `https://api.themoviedb.org/3/search/movie?api_key=${key}&query=${query}`;
 
@@ -22,7 +21,6 @@ exports.collectMovieData = function(request, response) {
     .then(movieResponse => {
       console.log('RESPONSE FROM API');
       const data = movieResponse.body.results;
-      console.log(data);
       let movies = [];
       data.map(item => movies.push(new Movie(item)));
       response.render('details', { movies });
