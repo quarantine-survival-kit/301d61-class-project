@@ -34,7 +34,7 @@ exports.getRecipes = function(request, response) {
 
 exports.saveRecipe = function(request, response) {
   const { title, calories, steps, image_url, healthLabels } = request.body;
-  let addRecipeSQL = 'INSERT INTO recipes (title, calories, steps, image_url, healthLabels) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *';
+  let addRecipeSQL = 'INSERT INTO recipes (title, calories, steps, image_url, healthLabels) VALUES ($1, $2, $3, $4, $5) RETURNING *';
   let addRecipeValues = [title, calories, steps, image_url, healthLabels];
   db.insertToDB(request, response, addRecipeSQL, addRecipeValues);
 };
