@@ -1,6 +1,10 @@
+
+
+
 DROP TABLE IF EXISTS books;
 DROP TABLE IF EXISTS recipes;
 DROP TABLE IF EXISTS movies;
+DROP TABLE IF EXISTS users;
 
 CREATE TABLE books (
   id SERIAL,
@@ -30,4 +34,11 @@ CREATE TABLE movies (
   popularity VARCHAR(255),
   release_date VARCHAR(255),
   view_link VARCHAR(255)
+);
+
+CREATE TABLE users (
+id SERIAL PRIMARY KEY,
+username VARCHAR(255),
+password VARCHAR(255),
+image_url VARCHAR(255)
 );
