@@ -9,7 +9,6 @@
       <img id="img_url" src=<%= recipe.image_url %> />
       <form class='hiddenData recipeForm' action='/saveRecipe' method="POST">
         <input class="info" type="text" name="title" value= "<%= recipe.title %>">
-        <input class="info" type="text" name="ingredients" value="<%= recipe.ingredients %>">
         <input class="info" type="text" name="calories" value="<%= recipe.calories %>">
         <input class="info" type="text" name="steps" value="<%= recipe.steps %>">
         <input class="info" type="text" name="image_url" value="<%= recipe.image_url %>">
@@ -33,7 +32,6 @@
 
     var posting = $.post( url, { 
       title: $form.find("input[name='title']").val(),
-      ingredients: $form.find("input[name='ingredients']").val(),
       calories: $form.find("input[name='calories']").val(),
       steps: $form.find("input[name='steps']").val(),
       image_url: $form.find("input[name='image_url']").val(),
