@@ -19,7 +19,6 @@ CREATE TABLE books (
 CREATE TABLE recipes (
   id SERIAL,
   title VARCHAR(255),
-  ingredients VARCHAR(255),
   calories TEXT,
   steps TEXT,
   image_url VARCHAR(255),
