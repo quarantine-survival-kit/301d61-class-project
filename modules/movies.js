@@ -1,5 +1,6 @@
 'use strict';
 
+const pg = require('pg');
 const superagent = require('superagent');
 const errorHandler = require('./error');
 
@@ -7,7 +8,7 @@ const errorHandler = require('./error');
 function Movie (movie) {
   this.title = movie.title;
   this.overview = movie.overview;
-  this.image_url = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+  this.image_url = movie.poster_path !== null ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`: 'https://i.imgur.com/J5LVHEL.jpg';
   this.popularity = movie.popularity;
   this.release_date = movie.release_date;
   this.view_link = movie.title ? `https://www.justwatch.com/us/search?q=${movie.title}` : 'No link available.';
@@ -28,3 +29,6 @@ exports.collectMovieData = function(request, response) {
     })
     .catch(error => errorHandler(error, request, response));
 };
+
+
+

@@ -22,7 +22,7 @@ const app = express();
 const recipe = require('./modules/recipes');
 const book = require('./modules/books');
 const movie = require('./modules/movies');
-
+const saveMovie = require('./modules/save-movies');
 
 // Creates express instance and EJS setup
 app.set('view engine', 'ejs');
@@ -57,6 +57,8 @@ app.get('/favorites', (request, response) => {
 app.post('/recipeSearch', recipe.getRecipes);
 app.post('/bookSearch', book.callBooksAPI);
 app.post('/movieSearch', movie.collectMovieData);
+
+app.post('/movies', saveMovie.addMovieToFavorites);
 
 // Start server listening for requests
 app.listen( PORT, (request, response) => {
