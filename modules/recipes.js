@@ -2,6 +2,9 @@
 
 const superagent = require('superagent');
 const errorHandler = require('./error');
+const db = require('./db');
+// const pg = require('pg');
+// const dbClient = new pg.Client(process.env.DATABASE_URL);
 
 function Recipe(data) {
   this.title = data.label;
@@ -27,30 +30,22 @@ exports.getRecipes = function(request, response) {
     })
     .catch(error => {
       console.log(error);
-      errorHandler.errorHandler();
+      errorHandler.errorHandler(error, request, response);
     });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 };
+
+exports.saveRecipe = function(request, response) {
+  const { title, ingredients, calories, steps, image_url, healthLabels } = request.body;
+  let addRecipeSQL = 'INSERT INTO recipes (title, ingredients, calories, steps, image_url, healthLabels) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *';
+  let addRecipeValues = [title, ingredients, calories, steps, image_url, healthLabels];
+  db.insertToDB(request, response, addRecipeSQL, addRecipeValues);
+};
+
+
+
+
+
+
+
 
 
