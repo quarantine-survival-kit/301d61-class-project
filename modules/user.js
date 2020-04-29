@@ -1,14 +1,7 @@
 'use strict' ;
 const pg = require('pg');
 const errorHandler = require('./error');
-const dbClient = new pg.Client(process.env.DATABASE_URL);
-dbClient.connect(error => {
-  if (error) {
-    console.error('This was an Error', error.stack);
-  } else {
-    console.log('Were connected');
-  }
-});
+const db = require('./db');
 
 exports.createUser = function(request, response) {
   const data = request.body;
@@ -17,10 +10,8 @@ exports.createUser = function(request, response) {
   let insertSQL = `INSERT INTO users (username, password, image_url) VALUES ($1, $2, $3) RETURNING *;`;
   
   let insertValues = [user.username, user.password, user.image_url];
-
-  dbClient.query(insertSQL, insertValues);
-  response.render('index', {user});
-
+  
+  db.insertUserToDB(request, response, insertSQL, insertValues);
 };
 
 exports.findUser = function(request, response) {
@@ -29,13 +20,7 @@ exports.findUser = function(request, response) {
 
   let searchValues = [data];
 
-  dbClient.query(searchSQL, searchValues)
-    .then( user => {
-      console.log(user.rows);
-        response.render('index', {user: user.rows[0]});
-
-    })
-    .catch(error => errorHandler.errorHandler(error, request, response));
+  db.getUserFromDB(request, response, searchSQL, searchValues);
 
 };
 
