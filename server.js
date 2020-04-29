@@ -45,15 +45,15 @@ app.get('/favorites', (request, response) => {
   response.render('favorites');
 });
 
-app.post('/', user.createUser);
-app.post('/:password', user.findUser);
 app.post('/recipeSearch', recipe.getRecipes);
 app.post('/movieSearch', movie.collectMovieData);
 app.post('/saveRecipe', recipe.saveRecipe);
 app.post('/bookSearch', book.callBooksAPI);
 app.post('/saveBook', book.addBookToDB);
-
 app.post('/movies', movie.addMovieToFavorites);
+
+app.post('/', user.createUser);
+app.post('/:password', user.findUser);
 
 // Start server listening for requests
 app.listen( PORT, (request, response) => {

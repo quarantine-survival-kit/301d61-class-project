@@ -24,3 +24,27 @@ exports.insertToDB = function (request, response, sqlQuery, sqlValues) {
       errorHandler.errorHandler(error, request, response);
     });
 };
+
+exports.insertUserToDB = function (request, response, sqlQuery, sqlValues) {
+  dbClient.query(sqlQuery, sqlValues)
+    .then(user => {
+      response.render('index', {user});
+
+    })
+    .catch(error => {
+      console.log(error);
+      errorHandler.errorHandler(error, request, response);
+    });
+};
+
+exports.getUserFromDB = function (request, response, sqlQuery, sqlValues ) {
+  dbClient.query(sqlQuery, sqlValues)
+    .then( user => {
+      response.render('index', {user: user.rows[0]});
+
+    })
+    .catch(error => errorHandler.errorHandler(error, request, response));
+};
+
+
+
