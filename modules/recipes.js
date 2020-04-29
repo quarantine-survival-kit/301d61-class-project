@@ -3,8 +3,6 @@
 const superagent = require('superagent');
 const errorHandler = require('./error');
 const db = require('./db');
-// const pg = require('pg');
-// const dbClient = new pg.Client(process.env.DATABASE_URL);
 
 function Recipe(data) {
   this.title = data.label;
