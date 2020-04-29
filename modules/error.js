@@ -2,6 +2,8 @@
 
 exports.errorHandler = function(error, request, response, next) {
   console.log(error);
-  response.render('error', { error: 'Sorry something wrong' });
+
+  response.render('./error', { error: 'Sorry something wrong' });
+
 };
 
