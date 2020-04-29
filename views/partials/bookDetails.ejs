@@ -9,15 +9,39 @@
   </div>
   <p>Genre:  <%= element.genre %> </p>
   <a href="<%= element.retail_link %> ">Buy On Amazon</a>
-   <form class='hiddenData' action='/details' method="POST">
+   <form class='hiddenData bookForm' action='/saveBook' method="POST">
     <input class="info" type="text" name="title" value=' <%= element.title %>'>
     <input class="info" type="text" name="author" value=' <%= element.author %>'>
     <input class="info" type="text" name="synopsis" value=' <%= element.synopsis %> '>
     <input class="info" type="text" name="genre" value=' <%= element.genre %>'>
     <input class="info" type="text" name="image_url" value='<%= element.img_url %>'>
     <input class="info"type="text" name="retail_link" value=' <%= element.retail_link %> '>
-    <button type='submit'>Save your recipe!</button>
+    <button type='submit'>Save your book!</button>
    </form>
 </div>
 <% }) %>
 <% } %> 
+
+<script type='text/javascript'>
+  $(".bookForm").submit(function(event) {
+
+    event.preventDefault();
+
+    var $form = $( this ),
+        url = $form.attr( 'action' );
+
+    var posting = $.post( url, { 
+      title: $form.find("input[name='title']").val(),
+      author: $form.find("input[name='author']").val(),
+      synopsis: $form.find("input[name='synopsis']").val(),
+      genre: $form.find("input[name='genre']").val(),
+      img_url: $form.find("input[name='img_url']").val(),
+    });
+
+    posting.done(function( data ) {
+      alert('success');
+    });
+
+  });
+
+</script>
