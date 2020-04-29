@@ -22,23 +22,13 @@ const app = express();
 const recipe = require('./modules/recipes');
 const book = require('./modules/books');
 const movie = require('./modules/movies');
-const saveMovie = require('./modules/save-movies');
+
 
 // Creates express instance and EJS setup
 app.set('view engine', 'ejs');
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({extended: true}));
 app.use(express.static('./public'));
-
-// Connected to database client
-const dbClient = new pg.Client(process.env.DATABASE_URL);
-dbClient.connect( error => {
-  if (error) {
-    console.error(chalk.redBright('Database connection: Failed'), error.stack)
-  } else {
-    log(chalk.cyanBright.bold.underline('Database connection: Success'))
-  }
-})
 
 // CRUD routes
 // app.get('/error', errorHandler);
@@ -57,8 +47,9 @@ app.get('/favorites', (request, response) => {
 app.post('/recipeSearch', recipe.getRecipes);
 app.post('/bookSearch', book.callBooksAPI);
 app.post('/movieSearch', movie.collectMovieData);
+app.post('/saveRecipe', recipe.saveRecipe);
 
-app.post('/movies', saveMovie.addMovieToFavorites);
+app.post('/movies', movie.addMovieToFavorites);
 
 // Start server listening for requests
 app.listen( PORT, (request, response) => {

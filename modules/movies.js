@@ -1,8 +1,8 @@
 'use strict';
 
-const pg = require('pg');
 const superagent = require('superagent');
 const errorHandler = require('./error');
+const db = require('./db');
 
 //constructor function for Movies
 function Movie (movie) {
@@ -28,6 +28,13 @@ exports.collectMovieData = function(request, response) {
       response.render('details', { movies });
     })
     .catch(error => errorHandler(error, request, response));
+};
+
+exports.addMovieToFavorites = function(request, response) {
+  let {title, overview, image_url, popularity, release_date} = request.body;
+  let addMovieSQL = 'INSERT INTO movies (title, overview, image_url, popularity, release_date) VALUES ($1, $2, $3, $4, $5) RETURNING *';
+  let addMovieValues = [title, overview, image_url, popularity, release_date];
+  db.insertToDB(request, response, addMovieSQL, addMovieValues);
 };
 
 

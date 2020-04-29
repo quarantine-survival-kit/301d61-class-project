@@ -1,4 +1,6 @@
 DROP TABLE IF EXISTS books;
+DROP TABLE IF EXISTS recipes;
+DROP TABLE IF EXISTS movies;
 
 CREATE TABLE books (
   id SERIAL,
@@ -10,13 +12,21 @@ CREATE TABLE books (
   retail_link VARCHAR(255)
 );
 
-DROP TABLE IF EXISTS  movies;
+CREATE TABLE recipes (
+  id SERIAL,
+  title VARCHAR(255),
+  ingredients VARCHAR(255),
+  calories TEXT,
+  steps TEXT,
+  image_url VARCHAR(255),
+  healthLabels VARCHAR(255)
+);
 
 CREATE TABLE movies (
   id SERIAL,
   title VARCHAR(255),
-  overview VARCHAR(255),
-  image_url TEXT,
+  overview TEXT,
+  image_url VARCHAR(255),
   popularity VARCHAR(255),
   release_date VARCHAR(255),
   view_link VARCHAR(255)
