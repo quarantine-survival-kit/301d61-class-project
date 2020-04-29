@@ -60,8 +60,8 @@ viewBox="0 0 172 172"
 style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#34373d"><path d="M20.64,6.88c-7.59219,0 -13.76,6.16781 -13.76,13.76l0.05375,84.91156h0.05375c-0.02687,0.36281 -0.1075,0.71219 -0.1075,1.08844c0,7.59219 6.16781,13.76 13.76,13.76h41.28v-6.88h-41.28c-3.78937,0 -6.88,-3.09062 -6.88,-6.88c0,-3.78937 3.09063,-6.88 6.88,-6.88h41.28v-34.4c0,-11.38156 9.25844,-20.64 20.64,-20.64h20.64v-37.84zM30.96,24.08h48.16c1.89469,0 3.44,1.54531 3.44,3.44v6.88c0,1.89469 -1.54531,3.44 -3.44,3.44h-48.16c-1.89469,0 -3.44,-1.54531 -3.44,-3.44v-6.88c0,-1.89469 1.54531,-3.44 3.44,-3.44zM82.56,51.6c-7.59219,0 -13.76,6.16781 -13.76,13.76l0.05375,84.91156h0.05375c-0.02687,0.36281 -0.1075,0.71219 -0.1075,1.08844c0,7.59219 6.16781,13.76 13.76,13.76h82.56v-6.88h-82.56c-3.78937,0 -6.88,-3.09062 -6.88,-6.88c0,-3.78937 3.09063,-6.88 6.88,-6.88h82.56v-92.88zM92.88,68.8h48.16c1.89469,0 3.44,1.54531 3.44,3.44v6.88c0,1.89469 -1.54531,3.44 -3.44,3.44h-48.16c-1.89469,0 -3.44,-1.54531 -3.44,-3.44v-6.88c0,-1.89469 1.54531,-3.44 3.44,-3.44z"></path></g></g>
 </svg>
   <h2>Books</h2>
-  <form id='bookForm'>
-    <input type="text" class='info' name="query" placeholder="SEARCH!" >
+  <form action="/bookSearch" method="POST" id='bookForm'>
+    <input type="text" class='info' name="book_search_input" placeholder="SEARCH!" >
   <button type="submit">SEARCH BOOKS!</button>
   </form>
 </article>

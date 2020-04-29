@@ -7,7 +7,7 @@ Chalk style guides:
 Documentation at https://github.com/chalk/chalk#readme
 Errors will be chalk.redBright
 Positive results will be chalk.blueBright
-Server listening will be chalk.yellowBright.bold.underline
+Server listening/database connection will be chalk.cyanBright.bold.underline
 Data will be chalk.magentaBright
 --------------------*/
 
@@ -20,7 +20,9 @@ const methodOverride = require('method-override');
 const PORT = process.env.PORT || 3000;
 const app = express();
 const recipe = require('./modules/recipes');
+const book = require('./modules/books');
 const movie = require('./modules/movies');
+
 
 // Creates express instance and EJS setup
 app.set('view engine', 'ejs');
@@ -29,20 +31,14 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.static('./public'));
 
 // Connected to database client
-// const dbClient = new pg.Client(process.env.DATABASE_URL);
-// dbClient.connect( error => {
-//   if (error) {
-//     console.error(chalk.redBright('Database connection: Failed'), error.stack)
-//   } else {
-//     log(chalk.greenBright('Database connection: Success'))
-//   }
-// })
-
-// Function to handle all errors and render a new error page
-// function errorHandler(error, request, response) {
-//   log(chalk.redBright(error));
-//   response.render('error');
-// }
+const dbClient = new pg.Client(process.env.DATABASE_URL);
+dbClient.connect( error => {
+  if (error) {
+    console.error(chalk.redBright('Database connection: Failed'), error.stack)
+  } else {
+    log(chalk.cyanBright.bold.underline('Database connection: Success'))
+  }
+})
 
 // CRUD routes
 // app.get('/error', errorHandler);
@@ -59,10 +55,10 @@ app.get('/favorites', (request, response) => {
 });
 
 app.post('/recipeSearch', recipe.getRecipes);
+app.post('/bookSearch', book.callBooksAPI);
 app.post('/movieSearch', movie.collectMovieData);
 
 // Start server listening for requests
 app.listen( PORT, (request, response) => {
-  log(chalk.yellowBright.bold.underline('Server is listening on PORT ' + PORT));
+  log(chalk.cyanBright.bold.underline('Server is listening on PORT ' + PORT));
 });
-
