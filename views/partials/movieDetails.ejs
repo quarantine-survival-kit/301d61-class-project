@@ -1,17 +1,22 @@
-<div class='recipe'>
-  <h2>Title</h2>
-  <p>Calories</p>
-  <p>Health Labels</p>
-  <a href='stepURL'>
-    <img src='https://via.placeholder.com/100' alt='placeholder'>
-   </a>
+<% if (typeof movies !== 'undefined') { %>
+<% movies.forEach(function(movie){ %>
+
+<div class='movies'>
+  <h2><%= movie.title %></h2>
+  <p>Overview: <%= movie.overview %></p>
+  <p>Popularity: <%= movie.popularity %> </p>
+  <p>Release date: <%= movie.release_date %></p>
+    <img id="image_url" src="<%= movie.image_url %>" alt='placeholder'>
    <form class='hiddenData' action='' method="POST">
-    <input class="info" type="text" name="title" value=' recipe.title'>
-    <input class="info" type="text" name="ingredients" value=' recipe.ingredients'>
-    <input class="info" type="text" name="calories" value=' recipe.calories '>
-    <input class="info" type="text" name="steps" value=' recipe.steps'>
-    <input class="info" type="text" name="image_url" value='recipe.image_url'>
-    <input class="info"type="text" name="healthLabels" value=' recipe.healthLeables '>
-    <button type='submit'>Save your recipe!</button>
+    <input class="info" type="text" name="title" value='movie.title'>
+    <input class="info" type="text" name="overview" value=' movie.overview'>
+    <input class="info" type="text" name="image_url" value=' movie.image_url '>
+    <input class="info" type="text" name="popularity" value=' movie.popularity '>
+    <input class="info" type="text" name="release_date" value=' movie.release_date'>
+    <button type='submit'>Save your movie!</button>
    </form>
 </div>
+<% }) %>
+</div>
+
+<% } %>

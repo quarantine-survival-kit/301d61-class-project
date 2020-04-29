@@ -21,6 +21,8 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 const recipe = require('./modules/recipes');
 const book = require('./modules/books');
+const movie = require('./modules/movies');
+
 
 // Creates express instance and EJS setup
 app.set('view engine', 'ejs');
@@ -44,9 +46,9 @@ app.get('/', (request, response) => {
   response.render('index');
 });
 
-app.get('/details', (request, response) => {
-  response.render('details');
-});
+// app.get('/details', (request, response) => {
+//   response.render('details');
+// });
 
 app.get('/favorites', (request, response) => {
   response.render('favorites');
@@ -54,6 +56,7 @@ app.get('/favorites', (request, response) => {
 
 app.post('/recipeSearch', recipe.getRecipes);
 app.post('/bookSearch', book.callBooksAPI);
+app.post('/movieSearch', movie.collectMovieData);
 
 // Start server listening for requests
 app.listen( PORT, (request, response) => {
