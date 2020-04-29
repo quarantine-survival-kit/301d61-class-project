@@ -1,12 +1,14 @@
 <% if (typeof movies !== 'undefined') { %>
 <% movies.forEach(function(movie){ %>
 
-<div class='movies'>
+<div class='recipe'>
   <h2><%= movie.title %></h2>
+  <div class="movie-overview-container">
   <p>Overview: <%= movie.overview %></p>
+  </div>
   <p>Popularity: <%= movie.popularity %> </p>
   <p>Release date: <%= movie.release_date %></p>
-    <img id="image_url" src="<%= movie.image_url %>" alt='placeholder'>
+    <img src="<%= movie.image_url %>" alt='placeholder'>
    <form class='hiddenData' action='' method="POST">
     <input class="info" type="text" name="title" value='movie.title'>
     <input class="info" type="text" name="overview" value=' movie.overview'>
