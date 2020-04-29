@@ -1,0 +1,15 @@
+@import './reset.css';
+@import './base.css';
+@import './layout.css';
+@import './modules.css';
+
+:root {
+  --grey:#34373D;
+  --liteGrey: #e1e3e8;
+  --blue:#9DDCDC;
+   --tan:#FFEBB7;
+  --red:#E67A7A;
+  --white:#fffdf9;
+  --darkBlue: #9bbcbc;
+  --liteBlue:#ebf8f8;
+}
