@@ -28,7 +28,7 @@ exports.insertToDB = function (request, response, sqlQuery, sqlValues) {
 exports.insertUserToDB = function (request, response, sqlQuery, sqlValues) {
   dbClient.query(sqlQuery, sqlValues)
     .then(user => {
-      response.render('index', {user});
+      response.render('index', {user: user.rows[0]});
 
     })
     .catch(error => {

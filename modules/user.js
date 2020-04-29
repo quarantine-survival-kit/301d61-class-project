@@ -10,7 +10,7 @@ exports.createUser = function(request, response) {
   let insertSQL = `INSERT INTO users (username, password, image_url) VALUES ($1, $2, $3) RETURNING *;`;
   
   let insertValues = [user.username, user.password, user.image_url];
-  
+
   db.insertUserToDB(request, response, insertSQL, insertValues);
 };
 
@@ -26,7 +26,7 @@ exports.findUser = function(request, response) {
 
 
 function User(data) {
-  this.username = data.userName;
+  this.username = data.username;
   this.password = data.password;
-  this.image_url = `https://api.adorable.io/avatars/285/${data.userName}@adorable.io.png` ;
+  this.image_url = `https://api.adorable.io/avatars/285/${data.username}@adorable.io.png` ;
 };
