@@ -17,7 +17,7 @@ dbClient.connect( error => {
 exports.insertToDB = function (request, response, sqlQuery, sqlValues) {
   dbClient.query(sqlQuery, sqlValues)
     .then(data => {
-      response.send(200);
+      response.sendStatus(200);
     })
     .catch(error => {
       console.log(error);

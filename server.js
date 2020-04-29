@@ -24,6 +24,7 @@ const book = require('./modules/books');
 const movie = require('./modules/movies');
 const user = require('./modules/user');
 
+
 // Creates express instance and EJS setup
 app.set('view engine', 'ejs');
 app.use(methodOverride('_method'));
@@ -51,6 +52,8 @@ app.post('/movieSearch', movie.collectMovieData);
 app.post('/saveRecipe', recipe.saveRecipe);
 app.post('/bookSearch', book.callBooksAPI);
 app.post('/saveBook', book.addBookToDB);
+
+app.post('/movies', movie.addMovieToFavorites);
 
 // Start server listening for requests
 app.listen( PORT, (request, response) => {
