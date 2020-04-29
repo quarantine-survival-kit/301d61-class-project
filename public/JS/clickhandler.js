@@ -3,9 +3,11 @@
 
 
 function signInToggle() {
-  $('#signIn').on('click', function() {
-    $('#signIn').toggleClass('extended')
-    $('#userInfo').toggleClass('display', 'slow');
+  $('#profilePic').on('click', function() {
+    $('#signIn').toggleClass('extended');
+    setTimeout( () => {
+      $('#userInfo').toggleClass('display');
+    }, 150);
 
   });
 
@@ -16,6 +18,9 @@ signInToggle();
 function darkModeToggle() {
   $('#darkModeSwitch').on('click', function() {
     $('#switch').toggleClass( 'on');
+    setTimeout( () => {
+      $('*').toggleClass('dark');
+    }, 100);
   });
 
 }
@@ -52,4 +57,3 @@ function recipeForm() {
 }
 
 recipeForm();
-

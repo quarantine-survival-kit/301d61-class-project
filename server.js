@@ -22,6 +22,7 @@ const app = express();
 const recipe = require('./modules/recipes');
 const book = require('./modules/books');
 const movie = require('./modules/movies');
+const user = require('./modules/user');
 
 
 // Creates express instance and EJS setup
@@ -34,11 +35,11 @@ app.use(express.static('./public'));
 const dbClient = new pg.Client(process.env.DATABASE_URL);
 dbClient.connect( error => {
   if (error) {
-    console.error(chalk.redBright('Database connection: Failed'), error.stack)
+    console.error(chalk.redBright('Database connection: Failed'), error.stack);
   } else {
-    log(chalk.cyanBright.bold.underline('Database connection: Success'))
+    log(chalk.cyanBright.bold.underline('Database connection: Success'));
   }
-})
+});
 
 // CRUD routes
 // app.get('/error', errorHandler);
@@ -54,6 +55,8 @@ app.get('/favorites', (request, response) => {
   response.render('favorites');
 });
 
+app.post('/', user.createUser);
+app.post('/:password', user.findUser);
 app.post('/recipeSearch', recipe.getRecipes);
 app.post('/bookSearch', book.callBooksAPI);
 app.post('/movieSearch', movie.collectMovieData);
