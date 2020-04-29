@@ -3,7 +3,7 @@
 const chalk = require('chalk');
 const superagent = require('superagent');
 const errorHandler = require('./error');
-const pg = require('pg');
+const db = require('./db');
 
 
 // Constructor function used to generate books based on API results
@@ -33,4 +33,16 @@ exports.callBooksAPI = function(request, response) {
       console.log(error);
       errorHandler.errorHandler();
     });
+}
+
+// This function will save a selected book from the search list to the database and render that single book into favorites.ejs
+exports.addBookToDB = function(request, response){
+  let {title, author, synopsis, img_url, genre, retail_link} = request.body;
+
+  let addBook = `INSERT INTO books (title, author, synopsis, img_url, genre, retail_link) 
+                 VALUES ($1, $2, $3, $4, $5, $6) 
+                 RETURNING *;`;
+  let addValues = [title, author, synopsis, img_url, genre, retail_link];
+
+  db.insertToDB(request, response, addBook, addValues)
 }

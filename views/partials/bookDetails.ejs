@@ -9,7 +9,7 @@
   </div>
   <p>Genre:  <%= element.genre %> </p>
   <a href="<%= element.retail_link %> ">Buy On Amazon</a>
-   <form class='hiddenData' class="bookForm" action='/favorites' method="POST">
+   <form class='hiddenData bookForm' action='/saveBook' method="POST">
     <input class="info" type="text" name="title" value=' <%= element.title %>'>
     <input class="info" type="text" name="author" value=' <%= element.author %>'>
     <input class="info" type="text" name="synopsis" value=' <%= element.synopsis %> '>
