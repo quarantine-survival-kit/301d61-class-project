@@ -27,7 +27,10 @@ exports.collectMovieData = function(request, response) {
       data.map(item => movies.push(new Movie(item)));
       response.render('details', { movies });
     })
-    .catch(error => errorHandler(error, request, response));
+    .catch(error => {
+      console.log(error);
+      errorHandler.errorHandler();
+    });
 };
 
 exports.addMovieToFavorites = function(request, response) {
