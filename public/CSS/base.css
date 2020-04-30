@@ -41,6 +41,7 @@ form button {
   color: var(--white);
   border: none;
   padding: 5px;
+  grid-row: 2;
 }
 
 form button:hover {
@@ -54,8 +55,18 @@ form button:hover {
    0 0 5px var(--grey)
   ;
   transform: scale(1.1);
+  align-self: center;
 }
 
+form h3 {
+grid-column: 1 /3
+}
+
+#profilePic img {
+  width: inherit;
+  height: inherit;
+  border-radius: 50px;
+}
 h1 {
   font-family: 'Press Start 2P', cursive;
   color: var(--grey);
