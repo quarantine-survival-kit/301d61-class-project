@@ -21,7 +21,6 @@ exports.collectMovieData = function(request, response) {
 
   superagent.get(url)
     .then(movieResponse => {
-      console.log('RESPONSE FROM API');
       const data = movieResponse.body.results;
       let movies = [];
       data.map(item => movies.push(new Movie(item)));
@@ -35,10 +34,10 @@ exports.collectMovieData = function(request, response) {
 
 exports.addMovieToFavorites = function(request, response) {
   let {title, overview, image_url, popularity, release_date} = request.body;
-  let addMovieSQL = 'INSERT INTO movies (title, overview, image_url, popularity, release_date) VALUES ($1, $2, $3, $4, $5) RETURNING *';
-  let addMovieValues = [title, overview, image_url, popularity, release_date];
+  let addMovieSQL = 'INSERT INTO movies (title, username, overview, image_url, popularity, release_date) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *';
+  let username = request.cookies.username;
+  let addMovieValues = [title, username, overview, image_url, popularity, release_date];
   db.insertToDB(request, response, addMovieSQL, addMovieValues);
 };
-
 
 

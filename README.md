@@ -48,7 +48,20 @@ Install dependencies
   - Project repo created. Added basic file structure.
 
 ## Credits and Collaborations
-
+### API's used: 
+- Movies: [TMDB](https://www.themoviedb.org/documentation/api)
+- Books: [Google Books](https://developers.google.com/books/docs/overview)
+- Recipes: [EDAMAM](https://developer.edamam.com/edamam-recipe-api)
+- User Icons: [Adorable Avatars](http://avatars.adorable.io/)
+- COVID Data:[The COVID Tracking Project](https://covidtracking.com/api) 
+### Fonts:
+- [Google Fonts](https://fonts.google.com/)
+  - Press Start 2p and Roboto
+### Reset CSS:
+- [Reset CSS](http://meyerweb.com/eric/tools/css/reset/)
+### Links 
+- [Just watch for Where to Watch Movies](https://www.justwatch.com/)
+- [Purchase on Amazon](https://www.amazon.com/)
 ## Quarantine Survival Kit: 
 
 *As a user I would like to have a clean, simple UI where I can enter a category that I want to learn more about and be presented with a random selection of things based off that category: ie: workout routines, movies, wines, travel destinations, books, new hobby, meetups, recipes based on place*
@@ -79,7 +92,7 @@ Install dependencies
 
 ### Story 2:
 #### Movie recommendations
-- I, as a user, would like to search for movie recommendations based on genre, director or title.
+- I, as a user, would like to search for movie recommendations based on keyword or title.
 Given the user inputs a valid genre or title, when they click on a button and then the top 10 movie recommendations are displayed on the /display page.
 - The user can view and save the movie recommendations to the database.  The display will include title, synopsis, director, image, genre, popularity, and run time.
 - Stretch Goal: Display a random movie recommendation.
