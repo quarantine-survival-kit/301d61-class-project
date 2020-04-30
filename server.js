@@ -57,13 +57,6 @@ app.post('/bookSearch', book.callBooksAPI);
 app.post('/saveBook', book.addBookToDB);
 app.post('/movies', movie.addMovieToFavorites);
 
-app.post('/', user.createUser);
-app.post('/:password', user.findUser);
-
-
-
-app.post('/', user.createUser);
-app.post('/', user.findUser);
 // Start server listening for requests
 app.listen( PORT, (request, response) => {
   log(chalk.cyanBright.bold.underline('Server is listening on PORT ' + PORT));
