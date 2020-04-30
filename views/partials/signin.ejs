@@ -6,7 +6,7 @@
   <input class="userInfo" type="text" name="userName" placeholder="Username" >
   <input class="userInfo" type="text" name="password" placeholder="Password" >
   
-   <button type="submit" formmethod="POST" formaction="/:password"> SIGN IN</button>
+   <button type="submit" formmethod="POST" formaction="/"> SIGN IN</button>
    <button type="submit" formmethod="POST" formaction="/"> SIGN UP </button>
   </form>
 
@@ -21,7 +21,12 @@ style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-w
 
 
   <% } else { %>
-    <h3 id="userInfo">Hello <%= user.username%>!</h3>
+
+    <form id='userInfo' action="" method="POST">
+      <h3 >Hello <%= user.username%>!</h3>
+      <input type="hidden" name="popularity" value=' <%=user.userID %> '>
+      <button type="submit">Goodbye!</button>
+    </form>
     <div id="profilePic">
       <img src="<%= user.image_url%>" alt="profile picture">
     </div>
