@@ -24,7 +24,6 @@ exports.findUser = function(request, response) {
 
 };
 
-
 function User(data) {
   this.username = data.username;
   this.password = data.password;

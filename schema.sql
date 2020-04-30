@@ -8,6 +8,7 @@ DROP TABLE IF EXISTS users;
 
 CREATE TABLE books (
   id SERIAL,
+  username VARCHAR(255),
   title VARCHAR(255),
   author VARCHAR(255),
   synopsis TEXT,
@@ -18,6 +19,7 @@ CREATE TABLE books (
 
 CREATE TABLE recipes (
   id SERIAL,
+  username VARCHAR(255),
   title VARCHAR(255),
   calories TEXT,
   steps TEXT,
@@ -27,6 +29,7 @@ CREATE TABLE recipes (
 
 CREATE TABLE movies (
   id SERIAL,
+  username VARCHAR(255),
   title VARCHAR(255),
   overview TEXT,
   image_url VARCHAR(255),

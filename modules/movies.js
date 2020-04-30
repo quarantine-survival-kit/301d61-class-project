@@ -32,8 +32,9 @@ exports.collectMovieData = function(request, response) {
 
 exports.addMovieToFavorites = function(request, response) {
   let {title, overview, image_url, popularity, release_date} = request.body;
-  let addMovieSQL = 'INSERT INTO movies (title, overview, image_url, popularity, release_date) VALUES ($1, $2, $3, $4, $5) RETURNING *';
-  let addMovieValues = [title, overview, image_url, popularity, release_date];
+  let addMovieSQL = 'INSERT INTO movies (title, username, overview, image_url, popularity, release_date) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *';
+  let username = request.cookies.username;
+  let addMovieValues = [title, username, overview, image_url, popularity, release_date];
   db.insertToDB(request, response, addMovieSQL, addMovieValues);
 };
 

@@ -14,15 +14,13 @@ Data will be chalk.magentaBright
 // Installed dependencies and libraries
 require('dotenv').config();
 const express = require('express');
-const superagent = require('superagent');
-const pg = require('pg');
 const methodOverride = require('method-override');
 const PORT = process.env.PORT || 3000;
 const app = express();
 const recipe = require('./modules/recipes');
 const book = require('./modules/books');
 const movie = require('./modules/movies');
-const user = require('./modules/user');
+var cookieParser = require('cookie-parser');
 
 
 // Creates express instance and EJS setup
@@ -30,16 +28,16 @@ app.set('view engine', 'ejs');
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({extended: true}));
 app.use(express.static('./public'));
+app.use(cookieParser());
 
-// CRUD routes
-// app.get('/error', errorHandler);
+
 app.get('/', (request, response) => {
-  response.render('index');
+  response.render('homePage');
 });
 
-// app.get('/details', (request, response) => {
-//   response.render('details');
-// });
+app.get('/home', (request, response) => {
+  response.render('index');
+});
 
 app.get('/favorites', (request, response) => {
   response.render('favorites');
@@ -52,8 +50,13 @@ app.post('/bookSearch', book.callBooksAPI);
 app.post('/saveBook', book.addBookToDB);
 app.post('/movies', movie.addMovieToFavorites);
 
-app.post('/', user.createUser);
-app.post('/:password', user.findUser);
+// app.post('/', user.createUser);
+// app.post('/:password', user.findUser);
+
+app.post('/getUsername', (request, response)=> {
+  let username = request.body.username;
+  response.cookie('username', username).redirect('home');
+});
 
 // Start server listening for requests
 app.listen( PORT, (request, response) => {
