@@ -134,3 +134,43 @@ footer {
 header img {
   height: 100px;
 }
+
+.aboutUs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+
+#aboutUsInfo{
+  display: none;
+}
+
+.person {
+  display: flex;
+flex-direction: column;
+/* margin:10px; */
+padding:10px;
+align-items: center;
+width: 19vw;
+height: fit-content;
+}
+
+.person img {
+  width: 100%;
+  margin-bottom: 15px;
+  border-radius: 100%;
+  border: 2px solid var(--grey);
+}
+
+.person h2 {
+  font-size: 10px;
+  padding: 5px;
+  color: var(--red);
+  text-align: center ;
+}
+
+.person p {
+  padding:5px;
+  text-align: left;
+}
