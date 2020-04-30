@@ -36,6 +36,9 @@ app.use(express.static('./public'));
 app.get('/', (request, response) => {
   response.render('index');
 });
+app.get('/aboutUs', (request, response) => {
+  response.render('aboutUs');
+});
 
 // app.get('/details', (request, response) => {
 //   response.render('details');
