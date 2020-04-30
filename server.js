@@ -21,7 +21,7 @@ const recipe = require('./modules/recipes');
 const book = require('./modules/books');
 const movie = require('./modules/movies');
 var cookieParser = require('cookie-parser');
-
+const favorites = require('./modules/favorites');
 
 // Creates express instance and EJS setup
 app.set('view engine', 'ejs');
@@ -46,27 +46,20 @@ app.get('/favorites', (request, response) => {
   response.render('favorites');
 });
 
-
 app.post('/recipeSearch', recipe.getRecipes);
-
 app.post('/movieSearch', movie.collectMovieData);
 app.post('/saveRecipe', recipe.saveRecipe);
 app.post('/bookSearch', book.callBooksAPI);
 app.post('/saveBook', book.addBookToDB);
-app.post('/movies', movie.addMovieToFavorites);
-
-// app.post('/', user.createUser);
-// app.post('/:password', user.findUser);
-
 app.post('/getUsername', (request, response)=> {
   let username = request.body.username;
   response.cookie('username', username).redirect('home');
 });
+app.post('/movies', movie.addMovieToFavorites);
+app.post('/showFavRecipes', favorites.getFavoritesRecipes);
+app.post('/showFavMovies', favorites.getFavoritesMovies);
+app.post('/showFavBooks', favorites.getFavoritesBooks);
 
-
-
-app.post('/', user.createUser);
-app.post('/', user.findUser);
 // Start server listening for requests
 app.listen( PORT, (request, response) => {
   log(chalk.cyanBright.bold.underline('Server is listening on PORT ' + PORT));
