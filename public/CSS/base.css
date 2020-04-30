@@ -45,17 +45,12 @@ form button {
 }
 
 form button:hover {
-  background-color: var(--red);
-  border-radius: 20px;
-  color: var(--white);
-  border: none;
-  padding: 5px;
+ 
   box-shadow:
   inset 0 0 5px var(--red),
    0 0 5px var(--grey)
   ;
-  transform: scale(1.1);
-  align-self: center;
+ 
 }
 
 form h3 {
@@ -174,4 +169,33 @@ height: fit-content;
 .person p {
   padding:5px;
   text-align: left;
+}
+
+#loginScreen {
+  display: flex;
+  justify-content: center;
+}
+
+#loginInfo {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+}
+
+#loginInfo h1.dark {
+  color: var(--white);
+}
+
+#login {
+  background-color: var(--white);
+  padding: 10px;
+  margin: 10px;
+}
+
+#loginInfo button:hover {
+  background-color: var(--red);
+  border-radius: 20px;
+  color: var(--white);
+  border: none;
+  padding: 5px;
 }

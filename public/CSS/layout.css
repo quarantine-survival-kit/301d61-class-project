@@ -273,12 +273,7 @@ height: 300px;
         }
 
     #favorites {
-      position: absolute;
-      left: 50%;
-      top:  50%;
-      margin-left: -50px;
-      margin-top: -50px;
-      /* margin-top: -50px; */
+margin-left: 300px;
       width: 100px;
       height: 100px;
       border-radius: 100%;
@@ -632,19 +627,13 @@ transition: .5s ease-in-out;
           }
           
           #favorites {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            /* top:  50%; */
-            margin-left: -50px;
-            margin-top: -50px;
-            width: 100px;
-            height: 100px;
-            border-radius: 100%;
-            display: flex;
-            align-content: center;
-            justify-content: center;
-          }
+                  width: 100px;
+                  height: 100px;
+                  border-radius: 100%;
+                  display: flex;
+                  align-content: center;
+                  justify-content: center;
+                }
 
     #favorites img {
       width: 80px;

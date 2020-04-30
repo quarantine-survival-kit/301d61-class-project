@@ -243,7 +243,6 @@ These are the features we wanted at the start of this project.
 - Create a sign-in/up form which saves a user profile to the DB
 - Can save and recall/sign-in a user
 
-
 2. ### Movie recommendations
 - I, as a user, would like to search for movie recommendations based on genre, director or title.
 - Given the user inputs a valid genre or title, when they click on a button and then the top 10 movie recommendations are displayed on the /display page.

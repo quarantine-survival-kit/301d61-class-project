@@ -19,8 +19,11 @@
 </a> 
 <h1>Quarantine Survival Kit</h1>
 
-<!-- include partial here -->
-<%- include('./partials/signin') %>
+<a href='/favorites'>
+  <article id="favorites">
+    <img id="heart" src="/assets/heart.svg" alt="heart">
+  </article>
+</a>
 </header>
   
 <%- include('./partials/ticker') %>
@@ -65,12 +68,6 @@ style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-w
   <button type="submit">SEARCH RECIPES!</button>
   </form>
 </article>
-
-<a href='/favorites'>
-  <article id="favorites">
-    <img id="heart" src="/assets/heart.svg" alt="heart">
-  </article>
-</a>
 
  </main>
 
