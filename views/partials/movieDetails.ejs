@@ -8,7 +8,7 @@
   </div>
   <p>Popularity: <%= element.popularity %> </p>
   <p>Release date: <%= element.release_date %></p>
-    <img src="<%= element.image_url %>" alt='placeholder'>
+    <img src="<%= element.image_url %>" alt='Movie image'>
     <a href="<%= element.view_link %> ">Where to View</a>
    <form class='hiddenData movieForm' action='/movies' method="POST">
     <input class="info" type="text" name="title" value="<%= element.title %>">
@@ -16,7 +16,7 @@
     <input class="info" type="text" name="image_url" value="<%= element.image_url %>">
     <input class="info" type="text" name="popularity" value="<%= element.popularity %>">
     <input class="info" type="text" name="release_date" value="<%= element.release_date %>">
-    <button type='submit'>Save your movie!</button>
+    <button class="submitFavoriteButton" type='submit'>Save your movie!</button>
    </form>
 </div>
 <% }) %>
@@ -40,9 +40,16 @@
       release_date: $form.find("input[name='release_date']").val()
     });
 
+    $form.find("button[class='submitFavoriteButton']").text('Added to Favorites');
+    $form.find("button[class='submitFavoriteButton']").attr('disabled', true);
+    
     posting.done(function( data ) {
-      alert('Added to favorites!');
+      alert('Added to Favorites!');
     });
+    
   });
+
+
+
 
 </script>

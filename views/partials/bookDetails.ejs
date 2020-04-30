@@ -16,7 +16,7 @@
     <input class="info" type="text" name="genre" value=' <%= element.genre %>'>
     <input class="info" type="text" name="image_url" value='<%= element.img_url %>'>
     <input class="info"type="text" name="retail_link" value=' <%= element.retail_link %> '>
-    <button type='submit'>Save your book!</button>
+    <button type='submit' class="submitFavButton">Save your book!</button>
    </form>
 </div>
 <% }) %>
@@ -38,8 +38,11 @@
       img_url: $form.find("input[name='img_url']").val(),
     });
 
+    $form.find("button[class='submitFavButton']").text('Added to Favorites');
+    $form.find("button[class='submitFavButton']").attr('disabled', true);
+
     posting.done(function( data ) {
-      alert('success');
+      alert('Added to Favorites');
     });
 
   });
