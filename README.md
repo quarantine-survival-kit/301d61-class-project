@@ -60,8 +60,8 @@ Install dependencies
 ### Reset CSS:
 - [Reset CSS](http://meyerweb.com/eric/tools/css/reset/)
 ### Links 
-- [Where to Watch Movies Link](https://www.justwatch.com/)
-- 
+- [Just watch for Where to Watch Movies](https://www.justwatch.com/)
+- [Purchase on Amazon](https://www.amazon.com/)
 ## Quarantine Survival Kit: 
 
 *As a user I would like to have a clean, simple UI where I can enter a category that I want to learn more about and be presented with a random selection of things based off that category: ie: workout routines, movies, wines, travel destinations, books, new hobby, meetups, recipes based on place*
