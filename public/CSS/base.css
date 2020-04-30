@@ -144,6 +144,7 @@ header img {
 
 #aboutUsInfo{
   display: none;
+  align-content: center;
 }
 
 .person {

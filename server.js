@@ -51,11 +51,11 @@ app.post('/movieSearch', movie.collectMovieData);
 app.post('/saveRecipe', recipe.saveRecipe);
 app.post('/bookSearch', book.callBooksAPI);
 app.post('/saveBook', book.addBookToDB);
+app.post('/movies', movie.addMovieToFavorites);
 app.post('/getUsername', (request, response)=> {
   let username = request.body.username;
   response.cookie('username', username).redirect('home');
 });
-app.post('/movies', movie.addMovieToFavorites);
 app.post('/showFavRecipes', favorites.getFavoritesRecipes);
 app.post('/showFavMovies', favorites.getFavoritesMovies);
 app.post('/showFavBooks', favorites.getFavoritesBooks);
