@@ -33,16 +33,15 @@ exports.callBooksAPI = function(request, response) {
       console.log(error);
       errorHandler.errorHandler();
     });
-}
+};
 
 // This function will save a selected book from the search list to the database and render that single book into favorites.ejs
 exports.addBookToDB = function(request, response){
   let {title, author, synopsis, img_url, genre, retail_link} = request.body;
-
-  let addBook = `INSERT INTO books (title, author, synopsis, img_url, genre, retail_link) 
-                 VALUES ($1, $2, $3, $4, $5, $6) 
+  let addBook = `INSERT INTO books (title, username, author, synopsis, img_url, genre, retail_link) 
+                 VALUES ($1, $2, $3, $4, $5, $6, $7) 
                  RETURNING *;`;
-  let addValues = [title, author, synopsis, img_url, genre, retail_link];
-
-  db.insertToDB(request, response, addBook, addValues)
-}
+  let username = request.cookies.username;
+  let addValues = [title, username, author, synopsis, img_url, genre, retail_link];
+  db.insertToDB(request, response, addBook, addValues);
+};

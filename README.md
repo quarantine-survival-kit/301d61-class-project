@@ -195,6 +195,23 @@ These are the wire frames we used when designing the front-end of this web appli
 
 ## Problem Domain: 
 
+## Credits and Collaborations
+### API's used: 
+- Movies: [TMDB](https://www.themoviedb.org/documentation/api)
+- Books: [Google Books](https://developers.google.com/books/docs/overview)
+- Recipes: [EDAMAM](https://developer.edamam.com/edamam-recipe-api)
+- User Icons: [Adorable Avatars](http://avatars.adorable.io/)
+- COVID Data:[The COVID Tracking Project](https://covidtracking.com/api) 
+### Fonts:
+- [Google Fonts](https://fonts.google.com/)
+  - Press Start 2p and Roboto
+### Reset CSS:
+- [Reset CSS](http://meyerweb.com/eric/tools/css/reset/)
+### Links 
+- [Just watch for Where to Watch Movies](https://www.justwatch.com/)
+- [Purchase on Amazon](https://www.amazon.com/)
+## Quarantine Survival Kit: 
+
 *As a user I would like to have a clean, simple UI where I can enter a category that I want to learn more about and be presented with a random selection of things based off that category: ie: workout routines, movies, wines, travel destinations, books, new hobby, meetups, recipes based on place*
 
 These are the features we wanted at the start of this project. 
@@ -225,6 +242,7 @@ These are the features we wanted at the start of this project.
 - I, as a user, would like the site I interact with often to remember my settings and choices.
 - Create a sign-in/up form which saves a user profile to the DB
 - Can save and recall/sign-in a user
+
 
 2. ### Movie recommendations
 - I, as a user, would like to search for movie recommendations based on genre, director or title.
