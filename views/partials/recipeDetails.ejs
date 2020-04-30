@@ -7,17 +7,43 @@
       <p>Health labels: <%= recipe.healthLabels %> </p>
       <a href=<%= recipe.steps %>>Directions</a>
       <img id="img_url" src=<%= recipe.image_url %> />
-      <form class='hiddenData' action='' method="POST">
-        <input class="info" type="text" name="title" value=' recipe.title'>
-        <input class="info" type="text" name="ingredients" value=' recipe.ingredients'>
-        <input class="info" type="text" name="calories" value=' recipe.calories '>
-        <input class="info" type="text" name="steps" value=' recipe.steps'>
-        <input class="info" type="text" name="image_url" value='recipe.image_url'>
-        <input class="info"type="text" name="healthLabels" value=' recipe.healthLeables '>
-        <button type='submit'>Save your recipe!</button>
+      <form class='hiddenData recipeForm' action='/saveRecipe' method="POST">
+        <input class="info" type="text" name="title" value= "<%= recipe.title %>">
+        <input class="info" type="text" name="calories" value="<%= recipe.calories %>">
+        <input class="info" type="text" name="steps" value="<%= recipe.steps %>">
+        <input class="info" type="text" name="image_url" value="<%= recipe.image_url %>">
+        <input class="info"type="text" name="healthLabels" value="<%= recipe.healthLabels %>">
+        <button type='submit' class="submit-btn">Save your recipe!</button>
        </form>
+       
       </div>
     <% }) %>
 </div>
 
 <% } %>
+
+<script type='text/javascript'>
+  $(".recipeForm").submit(function(event) {
+
+    event.preventDefault();
+
+    var $form = $( this ),
+        url = $form.attr( 'action' );
+
+    var posting = $.post( url, { 
+      title: $form.find("input[name='title']").val(),
+      calories: $form.find("input[name='calories']").val(),
+      steps: $form.find("input[name='steps']").val(),
+      image_url: $form.find("input[name='image_url']").val(),
+      healthLabels: $form.find("input[name='healthLabels']").val()
+    });
+
+    $form.find("button[class='submit-btn']").text('Added to Favorites');
+    $form.find("button[class='submit-btn']").attr('disabled', true);
+
+    posting.done(function( data ) {
+      alert('Added to Favorites');
+    });
+  });
+
+</script>

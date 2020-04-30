@@ -1,24 +1,55 @@
 <% if (typeof movies !== 'undefined') { %>
-<% movies.forEach(function(movie){ %>
+<% movies.forEach(function(element){ %>
 
 <div class='recipe'>
-  <h2><%= movie.title %></h2>
+  <h2><%= element.title %></h2>
   <div class="movie-overview-container">
-  <p>Overview: <%= movie.overview %></p>
+  <p>Overview: <%= element.overview %></p>
   </div>
-  <p>Popularity: <%= movie.popularity %> </p>
-  <p>Release date: <%= movie.release_date %></p>
-    <img src="<%= movie.image_url %>" alt='placeholder'>
-   <form class='hiddenData' action='' method="POST">
-    <input class="info" type="text" name="title" value='movie.title'>
-    <input class="info" type="text" name="overview" value=' movie.overview'>
-    <input class="info" type="text" name="image_url" value=' movie.image_url '>
-    <input class="info" type="text" name="popularity" value=' movie.popularity '>
-    <input class="info" type="text" name="release_date" value=' movie.release_date'>
-    <button type='submit'>Save your movie!</button>
+  <p>Popularity: <%= element.popularity %> </p>
+  <p>Release date: <%= element.release_date %></p>
+    <img src="<%= element.image_url %>" alt='Movie image'>
+    <a href="<%= element.view_link %> ">Where to View</a>
+   <form class='hiddenData movieForm' action='/movies' method="POST">
+    <input class="info" type="text" name="title" value="<%= element.title %>">
+    <input class="info" type="text" name="overview" value="<%= element.overview %>">
+    <input class="info" type="text" name="image_url" value="<%= element.image_url %>">
+    <input class="info" type="text" name="popularity" value="<%= element.popularity %>">
+    <input class="info" type="text" name="release_date" value="<%= element.release_date %>">
+    <button class="submitFavoriteButton" type='submit'>Save your movie!</button>
    </form>
 </div>
 <% }) %>
 </div>
 
 <% } %>
+
+<script type='text/javascript'>
+  $(".movieForm").submit(function(event) {
+
+    event.preventDefault();
+
+    var $form = $( this ),
+        url = $form.attr( 'action' );
+
+    var posting = $.post( url, { 
+      title: $form.find("input[name='title']").val(),
+      overview: $form.find("input[name='overview']").val(),
+      image_url: $form.find("input[name='image_url']").val(),
+      popularity: $form.find("input[name='popularity']").val(),
+      release_date: $form.find("input[name='release_date']").val()
+    });
+
+    $form.find("button[class='submitFavoriteButton']").text('Added to Favorites');
+    $form.find("button[class='submitFavoriteButton']").attr('disabled', true);
+    
+    posting.done(function( data ) {
+      alert('Added to Favorites!');
+    });
+    
+  });
+
+
+
+
+</script>

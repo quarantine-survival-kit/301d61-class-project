@@ -1,14 +1,7 @@
 'use strict' ;
 const pg = require('pg');
 const errorHandler = require('./error');
-const dbClient = new pg.Client(process.env.DATABASE_URL);
-dbClient.connect(error => {
-  if (error) {
-    console.error('This was an Error', error.stack);
-  } else {
-    console.log('Were connected');
-  }
-});
+const db = require('./db');
 
 exports.createUser = function(request, response) {
   const data = request.body;
@@ -18,9 +11,7 @@ exports.createUser = function(request, response) {
   
   let insertValues = [user.username, user.password, user.image_url, user.userID];
 
-  dbClient.query(insertSQL, insertValues);
-  response.render('index', {user});
-
+  db.insertUserToDB(request, response, insertSQL, insertValues);
 };
 
 exports.findUser = function(request, response) {
@@ -29,20 +20,16 @@ exports.findUser = function(request, response) {
 
   let searchValues = [data];
 
-  dbClient.query(searchSQL, searchValues)
-    .then( user => {
-      
-      response.render('index', {user: user.rows[0]});
-      
-    })
-    .catch(error => errorHandler.errorHandler(error, request, response));
+  db.getUserFromDB(request, response, searchSQL, searchValues);
+
 
 };
 
 
 function User(data) {
-  this.username = data.userName;
+  this.username = data.username;
   this.password = data.password;
   this.image_url = `https://api.adorable.io/avatars/285/${data.userName}@adorable.io.png` ;
   this.userID = data.password + data.userName;
+
 };
