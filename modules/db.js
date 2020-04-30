@@ -46,5 +46,40 @@ exports.getUserFromDB = function (request, response, sqlQuery, sqlValues ) {
     .catch(error => errorHandler.errorHandler(error, request, response));
 };
 
+exports.getFavoritesRecipesFromDB = function (request, response, sqlQuery, sqlValues ) {
+  dbClient.query(sqlQuery, sqlValues)
+    .then(data => {
+      if (data.rows.length > 0) {
+        response.render('favorites', { recipes: data.rows });
+      } else {
+        response.sendStatus(200);
+      }
+    })
+    .catch(error => errorHandler(error, request, response));
+};
 
+exports.getFavoritesMoviesFromDB = function (request, response, sqlQuery, sqlValues ) {
+  dbClient.query(sqlQuery, sqlValues)
+    .then(data => {
+      if (data.rows.length > 0) {
+        response.render('favorites', { movies: data.rows });
+      } else {
+        response.sendStatus(200);
+      }
+    })
+    .catch(error => errorHandler(error, request, response));
+};
+
+exports.getFavoritesBooksFromDB = function (request, response, sqlQuery, sqlValues ) {
+  dbClient.query(sqlQuery, sqlValues)
+    .then(data => {
+      console.log(data.rows);
+      if (data.rows.length > 0) {
+        response.render('favorites', { books: data.rows });
+      } else {
+        response.sendStatus(200);
+      }
+    })
+    .catch(error => errorHandler(error, request, response));
+};
 

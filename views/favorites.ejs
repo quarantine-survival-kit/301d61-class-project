@@ -31,24 +31,32 @@
   <main id='details'> 
   <article id='movieDetails' class="details">
   <h1>YOUR MOVIES!</h1>
+  <form action="/showFavMovies" method="POST">
+    <button type="submit">Show</button>
   <div class="holder">
     <%- include('./partials/movieFavorites') %>
   </div>
+</form>
   </article>
 
   <article id='booksDetails' class="details">
     <h1>YOUR BOOKS!</h1>
+    <form action="/showFavBooks" method="POST">
+      <button type="submit">Show</button>
     <div class="holder">
       <%- include('./partials/bookFavorites') %>
     </div>
-
+  </form>
   </article>
 
   <article id='recipesDetails' class="details">
     <h1>YOUR RECIPES!</h1>
+    <form action="/showFavRecipes" method="POST">
+      <button type="submit">Show</button>
     <div class="holder">
       <%- include('./partials/recipeFavorites') %>
     </div>
+  </form>
 </article>
  </main>
 
