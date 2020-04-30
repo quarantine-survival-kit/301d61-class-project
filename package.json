@@ -19,12 +19,17 @@
   "homepage": "https://github.com/quarantine-survival-kit/301d61-class-project#readme",
   "dependencies": {
     "chalk": "^4.0.0",
+<<<<<<< HEAD
     "cookieparser": "^0.1.0",
+=======
+    "cookie-parser": "^1.4.5",
+>>>>>>> 96484aec877ce79e16c9f7e194543749517f0f21
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "ejs": "^3.1.2",
     "express": "^4.17.1",
     "method-override": "^3.0.0",
+    "node-localstorage": "^2.1.6",
     "pg": "^8.0.3",
     "superagent": "^5.2.2"
   },
