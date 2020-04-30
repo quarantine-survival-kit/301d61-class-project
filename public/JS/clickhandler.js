@@ -7,6 +7,7 @@ function signInToggle() {
     $('#signIn').toggleClass('extended');
     setTimeout( () => {
       $('#userInfo').toggleClass('display');
+      $('#signOut').toggleClass('display');
     }, 150);
 
   });

@@ -55,6 +55,11 @@ app.post('/movies', movie.addMovieToFavorites);
 app.post('/', user.createUser);
 app.post('/:password', user.findUser);
 
+
+
+app.post('/movieSearch', user.currentUser);
+
+
 // Start server listening for requests
 app.listen( PORT, (request, response) => {
   log(chalk.cyanBright.bold.underline('Server is listening on PORT ' + PORT));

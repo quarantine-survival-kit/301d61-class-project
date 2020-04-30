@@ -5,6 +5,7 @@ const log = console.log;
 const pg = require('pg');
 const dbClient = new pg.Client(process.env.DATABASE_URL);
 const errorHandler = require('./error');
+const user = require('./user');
 
 dbClient.connect( error => {
   if (error) {
@@ -27,8 +28,8 @@ exports.insertToDB = function (request, response, sqlQuery, sqlValues) {
 
 exports.insertUserToDB = function (request, response, sqlQuery, sqlValues) {
   dbClient.query(sqlQuery, sqlValues)
-    .then(user => {
-      response.render('index', {user: user.rows[0]});
+    .then(data => {
+      response.render('index', {user: data.rows[0]});
 
     })
     .catch(error => {

@@ -35,7 +35,7 @@ form input {
   padding:5px;
 }
 
-form button {
+ button {
   background-color: var(--red);
   border-radius: 20px;
   color: var(--white);

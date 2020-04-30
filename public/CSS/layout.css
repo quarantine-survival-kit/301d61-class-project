@@ -85,6 +85,7 @@ transition: .5s ease-in-out;
 
 #userInfo button {
   width: fit-content;
+  grid-row-start: 2;
 }
 
 #profilePic {
