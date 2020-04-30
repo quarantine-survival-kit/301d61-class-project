@@ -38,8 +38,11 @@
       healthLabels: $form.find("input[name='healthLabels']").val()
     });
 
+    $form.find("button[class='submit-btn']").text('Added to Favorites');
+    $form.find("button[class='submit-btn']").attr('disabled', true);
+
     posting.done(function( data ) {
-      alert('Added to favorites');
+      alert('Added to Favorites');
     });
   });
 
