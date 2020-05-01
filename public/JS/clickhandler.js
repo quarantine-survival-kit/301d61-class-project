@@ -3,15 +3,15 @@
 
 
 function signInToggle() {
-  $('#profilePic').on('click', function() {
-    $('#signIn').toggleClass('extended');
-    setTimeout( () => {
-      $('#userInfo').toggleClass('display');
-    }, 150);
+  $('#coinSlot').on('click', function() {
+    $('#coinSlot').toggle('slow');
+    $('.loginInfo').toggle('slow');
 
   });
 
 }
+
+signInToggle();
 
 function toggleAboutUsPaul() {
   $('.person.paul img').on('click', function() {

@@ -22,7 +22,7 @@
     <img id="heart" src="/assets/heart.svg" alt="heart">
   </article>
 </a>
-<form action="/clearCookie" method="POST">
+<form id="logout" action="/clearCookie" method="POST">
   <button type="submit">logout</button>
 </form>
 </header>
@@ -46,7 +46,7 @@
 
   </article>
 
-  <article id='recipesDetails' class="details">
+    <article id='recipesDetails' class="details">
     <h1>RECIPES!</h1>
     <div class="holder">
       <%- include('./partials/recipeDetails') %>
