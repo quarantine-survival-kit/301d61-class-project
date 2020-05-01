@@ -9,14 +9,15 @@
   crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P|Roboto:500&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" type="text/css" href="/CSS/styles.css">
+  
   <title>Quarantine Survival Kit</title>
   <link rel="shortcut icon" type="image/png" href="./assets/favicon.png">
 </head>
 <body>
   <header>
-    <a href='/home'>
-      <img src="/assets/Logo.svg" alt="logo">  
-    </a> 
+ <a href='/home'>
+  <img src="/assets/Logo.svg" alt="logo">  
+</a> 
 <h1>Quarantine Survival Kit</h1>
 <a href='/favorites'>
   <article id="favorites">
@@ -30,29 +31,49 @@
   
 <%- include('./partials/ticker') %>
 
+  <main class="aboutUs"> 
+<article class="person paul">
+  <img src="/assets/Paul_headshot.jpg">
+  <div id="aboutUsInfo">
+  <h1>Paul Depew</h1>
+  <h2>Role: CSS Wizard, Design Deacon, Templating Machine</h2>
 
-  <main id='details'> 
-  <article id='movieDetails' class="details">
-  <h1>MOVIES!</h1>
-  <div class="holder">
-    <%- include('./partials/movieDetails') %>
-  </div>
-  </article>
-
-  <article id='booksDetails' class="details">
-    <h1>BOOKS!</h1>
-    <div class="holder">
-        <%- include('./partials/bookDetails') %>
-    </div>
-
-  </article>
-
-    <article id='recipesDetails' class="details">
-    <h1>RECIPES!</h1>
-    <div class="holder">
-      <%- include('./partials/recipeDetails') %>
-    </div>
+  <p>Creative Content Manager with a demonstrated history of helping to define new industries. Familiarity in a variety of mediums and formats, including print and technology. A strong operations professional with a Bachelor of Arts - BA focused in Community Development from The Evergreen State College. </p>
+</div>
 </article>
+
+<article class="person olga">
+  <img src="/assets/2020-02-28 14.22.53.jpg">
+  <div id="aboutUsInfo">
+  <h1>Olga Charnysh</h1>
+  <h2>Role: Savior, Database Powerhouse, The Fixer</h2>
+
+  <p>Creative Content Manager with a demonstrated history of helping to define new industries. Familiarity in a variety of mediums and formats, including print and technology. A strong operations professional with a Bachelor of Arts - BA focused in Community Development from The Evergreen State College. </p>
+</div>
+</article>
+
+<article class="person kent">
+  <img src="/assets/THP_MarinaKent-13-Edit.jpg">
+  <div id="aboutUsInfo">
+  <h1>Kent Sheats</h1>
+  <h2>Role: API Whisperer, CRUD Commando, AJAX Academic </h2>
+
+  <p>Hello I am Kent.  I am a Software Developer with a passion and level of curiosity for technology.  What excites me most about tech is the endless possibilities, and how it is constantly evolving to solve challenges and simplify life, allowing us all to do more. </p>
+</div>
+</article>
+
+<article class="person joe">
+  <img src="/assets/joe-4.jpg.jpeg">
+  <div id="aboutUsInfo">
+  <h1>Joe Pennock</h1>
+  <h2>Role: Javascript Grandmaster Flash, Senior Web Architect (kinda like God)</h2>
+
+  <p>Creative Content Manager with a demonstrated history of helping to define new industries. Familiarity in a variety of mediums and formats, including print and technology. A strong operations professional with a Bachelor of Arts - BA focused in Community Development from The Evergreen State College. </p>
+</div>
+</article>
+
+
+
  </main>
 
 <footer>
@@ -63,7 +84,7 @@
 </div>
   <ul>
     <li>
-      <a href="">
+      <a href="https://github.com/quarantine-survival-kit/301d61-class-project">
       <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
       width="26" height="26"
       viewBox="0 0 172 172"
@@ -73,7 +94,7 @@
     </li>
   
     <li>
-      <a href="">
+      <a href="/aboutUs">
       <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
       width="24" height="24"
       viewBox="0 0 172 172"

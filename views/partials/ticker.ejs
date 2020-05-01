@@ -1,3 +1,36 @@
 <div id='ticker'>
-  <h2 id="tickerInfo">.......COVID-19 DATA......</h2>
+  <h2 id="tickerInfo"></h2>
 </div>
+
+<script type='text/javascript'>
+
+'use strict'
+
+fetch('https://covidtracking.com/api/v1/states/wa/current.json')
+  .then(response => response.json())
+  .then(data => {
+    let state = data.state;
+    let tests = data.totalTestResults;
+    let negative = data.negative;
+    let positive = data.positive;
+    let update = data.lastUpdateEt;
+
+    $('#tickerInfo').on('load').html(
+      '<p>Covid-19 data for:&nbsp;</p>  <p class="green"> ' 
+      + state + 
+      '  </p> <p>&nbsp;state... Total tests administered:&nbsp;</p> <p class="green"> ' 
+      + tests + 
+      '</p> <p>... Positive tests:&nbsp;</p> <p class="green"> ' 
+      + positive + 
+      '</p> <p>... Negative tests:&nbsp;</p> <p class="green">'
+      + negative + 
+      '</p> <p>... Last updated:&nbsp;</p> <p class="green"> ' 
+      + update + 
+      '</p><p>...</p>')
+  })
+  .catch(function(error){
+    console.log(error)
+  })
+
+</script>
+

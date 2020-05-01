@@ -1,15 +1,16 @@
-<div class='recipe'>
-  <h2>Title</h2>
-  <a href='stepURL'>
-    <img src='https://via.placeholder.com/100' alt='placeholder'>
-   </a>
-   <form class='hiddenData' action='/favorites/:title?_method=DELETE' method="POST">
-    <input class="info" type="text" name="title" value=' recipe.title'>
-    <input class="info" type="text" name="ingredients" value=' recipe.ingredients'>
-    <input class="info" type="text" name="calories" value=' recipe.calories '>
-    <input class="info" type="text" name="steps" value=' recipe.steps'>
-    <input class="info" type="text" name="image_url" value='recipe.image_url'>
-    <input class="info"type="text" name="healthLabels" value=' recipe.healthLeables '>
-    <button type='submit'>REMOVE!</button>
-   </form>
-</div>
+<% if (typeof movies !== 'undefined') { %>
+  <% movies.forEach(function(element){ %>
+  
+  <div class='movie'>
+    <h2><%= element.title %></h2>
+    <img src="<%= element.image_url %>" alt='Movie image'>
+    <a href="<%= element.view_link %> ">Where to View</a>
+    <form class='hiddenData movieForm' action='/deleteMovie' method="POST">
+    <input class="info" type="hidden" name="id" value="<%= element.id %>">
+    <button type='submit' class="delete-btn">Delete your movie!</button>
+    </form>
+  </div>
+  <% }) %>
+  </div>
+  
+  <% } %>

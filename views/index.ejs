@@ -9,36 +9,30 @@
   crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P|Roboto:500&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" type="text/css" href="/CSS/styles.css">
+  <link rel="shortcut icon" type="image/png" href="./assets/favicon.png">
   <title>Quarantine Survival Kit</title>
 </head>
 <body>
   <header>
-<img src="/assets/Logo.svg" alt="">  
+ <a href='/home'>
+  <img src="/assets/Logo.svg" alt="logo">  
+</a> 
 <h1>Quarantine Survival Kit</h1>
-<div id='signIn'>
 
-<form id='userInfo' >
-<input class="userInfo" type="text" name="username" placeholder="Username" >
-<input class="userInfo" type="text" name="password" placeholder="Password" >
-
- <button type="submit" formmethod="GET" formaction="/details"> SIGN IN</button>
- <button type="submit" formmethod="GET" formaction="/details"> SIGNUP </button>
+<a href='/favorites'>
+  <article id="favorites">
+    <img id="heart" src="/assets/heart.svg" alt="heart">
+  </article>
+</a>
+<form id="logout" action="/clearCookie" method="POST">
+  <button type="submit">logout</button>
 </form>
-
-  <div id="profilePic">
-    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-width="30" height="30"
-viewBox="0 0 172 172"
-style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#34373d"><path d="M48.73333,28.66667c-14.36444,0 -26.53169,9.73917 -30.30156,22.93333h-6.9651c-2.06765,-0.02924 -3.99087,1.05709 -5.03322,2.843c-1.04236,1.78592 -1.04236,3.99474 0,5.78066c1.04236,1.78592 2.96558,2.87225 5.03322,2.843h5.87891c1.46106,16.01525 15.00732,28.66667 31.38776,28.66667c17.34747,0 31.53333,-14.18587 31.53333,-31.53333c0,-0.6006 -0.05603,-1.1879 -0.08958,-1.78047c0.06428,-0.3584 0.09428,-0.72211 0.08958,-1.0862c0,-3.23951 2.49383,-5.73333 5.73333,-5.73333c3.23951,0 5.73333,2.49383 5.73333,5.73333c-0.00469,0.36409 0.0253,0.7278 0.08958,1.0862c-0.03355,0.59257 -0.08958,1.17987 -0.08958,1.78047c0,17.34747 14.18587,31.53333 31.53333,31.53333c16.38044,0 29.9267,-12.65141 31.38776,-28.66667h5.87891c2.06765,0.02924 3.99087,-1.05709 5.03322,-2.843c1.04236,-1.78592 1.04236,-3.99474 0,-5.78066c-1.04236,-1.78592 -2.96558,-2.87225 -5.03322,-2.843h-6.96511c-3.76987,-13.19416 -15.93712,-22.93333 -30.30156,-22.93333c-11.33439,0 -21.29251,6.06908 -26.85261,15.10599c-2.90687,-2.24503 -6.49479,-3.63932 -10.41406,-3.63932c-3.91927,0 -7.50719,1.39429 -10.41406,3.63932c-5.56009,-9.03691 -15.51821,-15.10599 -26.85261,-15.10599zM48.73333,40.13333c11.15042,0 20.06667,8.91624 20.06667,20.06667c0,11.15042 -8.91624,20.06667 -20.06667,20.06667c-11.15042,0 -20.06667,-8.91624 -20.06667,-20.06667c0,-11.15042 8.91624,-20.06667 20.06667,-20.06667zM123.26667,40.13333c11.15042,0 20.06667,8.91624 20.06667,20.06667c0,11.15042 -8.91624,20.06667 -20.06667,20.06667c-11.15042,0 -20.06667,-8.91624 -20.06667,-20.06667c0,-11.15042 8.91624,-20.06667 20.06667,-20.06667zM74.53333,103.2c-17.36053,0 -16.86747,22.93333 -34.4,22.93333c-19.44747,0 -17.2,-17.2 -17.2,-17.2c0,0 -5.73333,6.28373 -5.73333,14.33333c0,13.76573 14.51214,20.06667 34.35521,20.06667c17.03237,0 28.28508,-3.66551 34.44479,-9.56302c6.15971,5.89751 17.41243,9.56302 34.44479,9.56302c19.84307,0 34.35521,-6.30093 34.35521,-20.06667c0,-8.0496 -5.73333,-14.33333 -5.73333,-14.33333c0,0 2.24747,17.2 -17.2,17.2c-17.53253,0 -17.03947,-22.93333 -34.4,-22.93333c-4.68936,0 -8.55784,1.57922 -11.46667,4.10964c-2.90883,-2.53041 -6.77731,-4.10964 -11.46667,-4.10964z"></path></g></g>
-</svg>
-  </div>
-</div>
-
 </header>
   
 <%- include('./partials/ticker') %>
 
-  <main> 
+  <main>
+
 <article id="movies">
   <svg id="movieImage" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
   width="50" height="50"
@@ -47,8 +41,8 @@ style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-w
 </svg>
 <h2>Movies</h2>
 
-<form id='movieForm'>
-  <input type="text" class='info' name="query" placeholder="SEARCH!" >
+<form id='movieForm' action="/movieSearch" method="POST">
+  <input type="text" class='info' name="movieSearchInput" placeholder="SEARCH for MOVIES!" >
 <button type="submit">SEARCH MOVIES!</button>
 </form>
 </article>
@@ -60,8 +54,8 @@ viewBox="0 0 172 172"
 style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#34373d"><path d="M20.64,6.88c-7.59219,0 -13.76,6.16781 -13.76,13.76l0.05375,84.91156h0.05375c-0.02687,0.36281 -0.1075,0.71219 -0.1075,1.08844c0,7.59219 6.16781,13.76 13.76,13.76h41.28v-6.88h-41.28c-3.78937,0 -6.88,-3.09062 -6.88,-6.88c0,-3.78937 3.09063,-6.88 6.88,-6.88h41.28v-34.4c0,-11.38156 9.25844,-20.64 20.64,-20.64h20.64v-37.84zM30.96,24.08h48.16c1.89469,0 3.44,1.54531 3.44,3.44v6.88c0,1.89469 -1.54531,3.44 -3.44,3.44h-48.16c-1.89469,0 -3.44,-1.54531 -3.44,-3.44v-6.88c0,-1.89469 1.54531,-3.44 3.44,-3.44zM82.56,51.6c-7.59219,0 -13.76,6.16781 -13.76,13.76l0.05375,84.91156h0.05375c-0.02687,0.36281 -0.1075,0.71219 -0.1075,1.08844c0,7.59219 6.16781,13.76 13.76,13.76h82.56v-6.88h-82.56c-3.78937,0 -6.88,-3.09062 -6.88,-6.88c0,-3.78937 3.09063,-6.88 6.88,-6.88h82.56v-92.88zM92.88,68.8h48.16c1.89469,0 3.44,1.54531 3.44,3.44v6.88c0,1.89469 -1.54531,3.44 -3.44,3.44h-48.16c-1.89469,0 -3.44,-1.54531 -3.44,-3.44v-6.88c0,-1.89469 1.54531,-3.44 3.44,-3.44z"></path></g></g>
 </svg>
   <h2>Books</h2>
-  <form id='bookForm'>
-    <input type="text" class='info' name="query" placeholder="SEARCH!" >
+  <form action="/bookSearch" method="POST" id='bookForm'>
+    <input type="text" class='info' name="book_search_input" placeholder="SEARCH!" >
   <button type="submit">SEARCH BOOKS!</button>
   </form>
 </article>
@@ -79,15 +73,11 @@ style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-w
   </form>
 </article>
 
-<a href='/favorites'>
-  <article id="favorites">
-    <img id="heart" src="/assets/heart.svg" alt="heart">
-  </article>
-</a>
 
  </main>
 
 <footer>
+  <p><%= joke %> </p>
   <div id='darkModeSwitch'>
     <div< id="darkMode">
 <div id="switch"></div>
@@ -95,7 +85,7 @@ style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-w
 </div>
   <ul>
     <li>
-      <a href="">
+      <a href="https://github.com/quarantine-survival-kit/301d61-class-project">
       <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
       width="26" height="26"
       viewBox="0 0 172 172"
@@ -105,7 +95,7 @@ style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-w
     </li>
   
     <li>
-      <a href="">
+      <a href="/aboutUs">
       <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
       width="24" height="24"
       viewBox="0 0 172 172"

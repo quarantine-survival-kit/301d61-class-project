@@ -1,3 +1,13 @@
 .hiddenData input {
   display: none;
 }
+
+.book-synopsis-container{
+  height: 200px;
+  overflow-y: auto;
+}
+
+.movie-overview-container{
+  height: 200px;
+  overflow-y: auto;
+}
