@@ -1,6 +1,10 @@
 # The Quarantine Survival Kit
 Group final project for Code Fellows seattle-301d61 
 
+## Live deployment
+
+Check out our app out in the wild [here](https://quarantine-survival-kit.herokuapp.com/)! 
+
 <hr>
 
 ## Table of Contents
@@ -10,7 +14,6 @@ Group final project for Code Fellows seattle-301d61
 - [Getting Started](#Getting-Started)
 - [Technologies used in this project](#Technologies-used-in-this-project)
 - [Change Log](#Change-Log)
-- [Version History](#Version-History)
 - [Domain Modeling](#Domain-Modeling)
 - [Wire Frames](#Wireframes)
 - [Problem Domain](#Problem-Domain)
@@ -161,14 +164,7 @@ This project is licensed under the free MIT license. As such, if you are interes
 
 ## Change Log
 
-[Return to the top](#Table-of-Contents)
-
-<hr>
-
-## Version History
-<!-- Key: major.minor.patch  -->
-* 1.0.0 20200428
-  - Project repo created. Added basic file structure.
+See the attached [CHANGELOG.md](CHANGELOG.md) file.
 
 [Return to the top](#Table-of-Contents)
 
