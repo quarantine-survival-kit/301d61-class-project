@@ -49,11 +49,7 @@ exports.getUserFromDB = function (request, response, sqlQuery, sqlValues ) {
 exports.getFavoritesRecipesFromDB = function (request, response, sqlQuery, sqlValues ) {
   dbClient.query(sqlQuery, sqlValues)
     .then(data => {
-      if (data.rows.length > 0) {
-        response.render('favorites', { recipes: data.rows });
-      } else {
-        response.sendStatus(200);
-      }
+      response.render('favorites', { recipes: data.rows });
     })
     .catch(error => errorHandler(error, request, response));
 };
@@ -61,11 +57,7 @@ exports.getFavoritesRecipesFromDB = function (request, response, sqlQuery, sqlVa
 exports.getFavoritesMoviesFromDB = function (request, response, sqlQuery, sqlValues ) {
   dbClient.query(sqlQuery, sqlValues)
     .then(data => {
-      if (data.rows.length > 0) {
-        response.render('favorites', { movies: data.rows });
-      } else {
-        response.sendStatus(200);
-      }
+      response.render('favorites', { movies: data.rows });
     })
     .catch(error => errorHandler(error, request, response));
 };
@@ -78,7 +70,15 @@ exports.getFavoritesBooksFromDB = function (request, response, sqlQuery, sqlValu
       } else {
         response.sendStatus(200);
       }
+      response.render('favorites', { books: data.rows });
     })
     .catch(error => errorHandler(error, request, response));
 };
 
+exports.deleteFromDB = function (request, response, sqlQuery, sqlValues ) {
+  dbClient.query(sqlQuery, sqlValues)
+    .then(data => {
+      response.render('favorites');
+    })
+    .catch(error => errorHandler(error, request, response));
+};

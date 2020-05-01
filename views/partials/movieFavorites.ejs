@@ -4,12 +4,11 @@
   <div class='movie'>
     <h2><%= element.title %></h2>
     <img src="<%= element.image_url %>" alt='Movie image'>
-      <a href="<%= element.view_link %> ">Where to View</a>
-     <form class='hiddenData movieForm' action='/deleteMovie' method="POST">
-      <input class="info" type="hidden" name="title" value="<%= element.title %>">
-      <input class="info" type="hidden" name="image_url" value="<%= element.image_url %>">
-      <button type='submit' class="delete-btn">Delete your movie!</button>
-     </form>
+    <a href="<%= element.view_link %> ">Where to View</a>
+    <form class='hiddenData movieForm' action='/deleteMovie' method="POST">
+    <input class="info" type="hidden" name="id" value="<%= element.id %>">
+    <button type='submit' class="delete-btn">Delete your movie!</button>
+    </form>
   </div>
   <% }) %>
   </div>

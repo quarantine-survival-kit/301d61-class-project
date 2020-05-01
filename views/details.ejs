@@ -13,7 +13,7 @@
 </head>
 <body>
   <header>
-    <a href='/'>
+    <a href='/home'>
       <img src="/assets/Logo.svg" alt="logo">  
     </a> 
 <h1>Quarantine Survival Kit</h1>
@@ -22,6 +22,9 @@
     <img id="heart" src="/assets/heart.svg" alt="heart">
   </article>
 </a>
+<form id="logout" action="/clearCookie" method="POST">
+  <button type="submit">logout</button>
+</form>
 </header>
   
 <%- include('./partials/ticker') %>
@@ -43,7 +46,7 @@
 
   </article>
 
-  <article id='recipesDetails' class="details">
+    <article id='recipesDetails' class="details">
     <h1>RECIPES!</h1>
     <div class="holder">
       <%- include('./partials/recipeDetails') %>
