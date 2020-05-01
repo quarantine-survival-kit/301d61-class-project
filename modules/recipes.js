@@ -40,6 +40,13 @@ exports.saveRecipe = function(request, response) {
   db.insertToDB(request, response, addRecipeSQL, addRecipeValues);
 };
 
+exports.deleteRecipe = function(request, response) {
+  let username = request.cookies.username;
+  let selectQuery = 'DELETE FROM recipes WHERE id=$1 AND username=$2;';
+  let selectValues = [request.body.id, username];
+  db.deleteFromDB(request, response, selectQuery, selectValues);
+};
+
 
 
 

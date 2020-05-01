@@ -22,3 +22,5 @@ exports.getFavoritesBooks = function(request, response) {
   let selectValues = [username];
   db.getFavoritesBooksFromDB(request, response, selectQuery, selectValues);
 };
+
+

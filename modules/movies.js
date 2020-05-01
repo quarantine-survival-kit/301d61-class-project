@@ -40,4 +40,11 @@ exports.addMovieToFavorites = function(request, response) {
   db.insertToDB(request, response, addMovieSQL, addMovieValues);
 };
 
+exports.deleteMovie = function(request, response) {
+  let username = request.cookies.username;
+  let selectQuery = 'DELETE FROM movies WHERE id=$1 AND username=$2;';
+  let selectValues = [request.body.id, username];
+  db.deleteFromDB(request, response, selectQuery, selectValues);
+};
+
 
