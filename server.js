@@ -43,7 +43,12 @@ app.get('/home', (request, response) => {
 });
 
 app.get('/favorites', (request, response) => {
-  response.render('favorites');
+  console.log(request.cookies.username)
+  if(request.cookies.username !== undefined){
+    response.render('favorites');
+  } else {
+    response.render('homePage')
+  }
 });
 
 app.post('/recipeSearch', recipe.getRecipes);
@@ -59,6 +64,11 @@ app.post('/getUsername', (request, response)=> {
 app.post('/showFavRecipes', favorites.getFavoritesRecipes);
 app.post('/showFavMovies', favorites.getFavoritesMovies);
 app.post('/showFavBooks', favorites.getFavoritesBooks);
+app.post('/clearCookie', (request, response) => {
+  response.clearCookie('username')
+  console.log(request.cookie)
+  response.redirect('/')
+})
 
 
 // Start server listening for requests

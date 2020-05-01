@@ -52,7 +52,7 @@ exports.getFavoritesRecipesFromDB = function (request, response, sqlQuery, sqlVa
       if (data.rows.length > 0) {
         response.render('favorites', { recipes: data.rows });
       } else {
-        response.sendStatus(200);
+        response.render('index');
       }
     })
     .catch(error => errorHandler(error, request, response));
@@ -64,7 +64,7 @@ exports.getFavoritesMoviesFromDB = function (request, response, sqlQuery, sqlVal
       if (data.rows.length > 0) {
         response.render('favorites', { movies: data.rows });
       } else {
-        response.sendStatus(200);
+        response.render('index');
       }
     })
     .catch(error => errorHandler(error, request, response));
@@ -73,11 +73,10 @@ exports.getFavoritesMoviesFromDB = function (request, response, sqlQuery, sqlVal
 exports.getFavoritesBooksFromDB = function (request, response, sqlQuery, sqlValues ) {
   dbClient.query(sqlQuery, sqlValues)
     .then(data => {
-      console.log(data.rows);
       if (data.rows.length > 0) {
         response.render('favorites', { books: data.rows });
       } else {
-        response.sendStatus(200);
+        response.render('index');
       }
     })
     .catch(error => errorHandler(error, request, response));
