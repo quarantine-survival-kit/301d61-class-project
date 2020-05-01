@@ -16,15 +16,15 @@ fetch('https://covidtracking.com/api/v1/states/wa/current.json')
     let update = data.lastUpdateEt;
 
     $('#tickerInfo').on('load').html(
-      '<p>Covid-19 data for: </p>  <p class="green">   ' 
+      '<p>Covid-19 data for:&nbsp;</p>  <p class="green"> ' 
       + state + 
-      '  </p> <p> state... Total tests administered:  </p> <p class="green"> ' 
+      '  </p> <p>&nbsp;state... Total tests administered:&nbsp;</p> <p class="green"> ' 
       + tests + 
-      '</p> <p>... Positive tests: </p> <p class="green"> ' 
+      '</p> <p>... Positive tests:&nbsp;</p> <p class="green"> ' 
       + positive + 
-      '</p> <p>... Negative tests: </p> <p class="green">'
+      '</p> <p>... Negative tests:&nbsp;</p> <p class="green">'
       + negative + 
-      '</p> <p>... Last updated:</p> <p class="green"> ' 
+      '</p> <p>... Last updated:&nbsp;</p> <p class="green"> ' 
       + update + 
       '</p><p>...</p>')
   })
