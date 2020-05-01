@@ -17,7 +17,7 @@ function Movie (movie) {
 exports.collectMovieData = function(request, response) {
   const query = request.body.movieSearchInput;
   const key = process.env.MOVIE_API_KEY;
-  const url = `https://api.themoviedb.org/3/search/movie?api_key=${key}&query=${query}&limit=10`;
+  const url = `https://api.themoviedb.org/3/search/movie?api_key=${key}&query=${query}&include_adult=false`;
 
   superagent.get(url)
     .then(movieResponse => {
@@ -33,10 +33,10 @@ exports.collectMovieData = function(request, response) {
 };
 
 exports.addMovieToFavorites = function(request, response) {
-  let {title, overview, image_url, popularity, release_date} = request.body;
-  let addMovieSQL = 'INSERT INTO movies (title, username, overview, image_url, popularity, release_date) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *';
+  let {title, overview, image_url, popularity, release_date, view_link} = request.body;
+  let addMovieSQL = 'INSERT INTO movies (title, username, overview, image_url, popularity, release_date, view_link) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *';
   let username = request.cookies.username;
-  let addMovieValues = [title, username, overview, image_url, popularity, release_date];
+  let addMovieValues = [title, username, overview, image_url, popularity, release_date, view_link];
   db.insertToDB(request, response, addMovieSQL, addMovieValues);
 };
 

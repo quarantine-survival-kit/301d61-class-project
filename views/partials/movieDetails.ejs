@@ -16,6 +16,7 @@
     <input class="info" type="text" name="image_url" value="<%= element.image_url %>">
     <input class="info" type="text" name="popularity" value="<%= element.popularity %>">
     <input class="info" type="text" name="release_date" value="<%= element.release_date %>">
+    <input class="info" type="text" name="view_link" value="<%= element.view_link %>">
     <button class="submitFavoriteButton" type='submit'>Save your movie!</button>
    </form>
 </div>
@@ -37,7 +38,8 @@
       overview: $form.find("input[name='overview']").val(),
       image_url: $form.find("input[name='image_url']").val(),
       popularity: $form.find("input[name='popularity']").val(),
-      release_date: $form.find("input[name='release_date']").val()
+      release_date: $form.find("input[name='release_date']").val(),
+      view_link: $form.find("input[name='view_link']").val()
     });
 
     $form.find("button[class='submitFavoriteButton']").text('Added to Favorites');
