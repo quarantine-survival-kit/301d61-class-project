@@ -5,6 +5,11 @@ grid-template-columns: 0fr 2fr 0fr;
 grid-template-rows: 150px 25px 1fr 1fr ;
 width: 100%;
 }
+.green {
+  color: green;
+  padding-left: 2px;
+  margin-right: 2px;
+}
 
 p {
   font-family: 'Roboto', sans-serif;
@@ -74,6 +79,7 @@ h2 {
 #ticker {
   background-color: var(--darkBlue);
   grid-area:2 / 2 / 2 / 2;
+
 background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2334373d' fill-opacity='0.1' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
 height: 25px;
 overflow: hidden;
@@ -81,11 +87,18 @@ overflow: hidden;
 
 
 #tickerInfo  {
+  display: flex;
+flex-direction: row;
   font-family: 'Press Start 2P', cursive;
   color: var(--red);
   white-space: nowrap;
   transition: translateX(100%);
   animation: scroll 40s linear infinite;
+}
+
+#tickerInfo p {
+  font-family: 'Press Start 2P', cursive;
+
 }
 
 @keyframes scroll {
