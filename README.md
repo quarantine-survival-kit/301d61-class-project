@@ -141,6 +141,20 @@ This project is licensed under the free MIT license. As such, if you are interes
 - [Method-Override](https://github.com/expressjs/method-override) - An npm package used in conjunction with express that allows for the use of HTTP verbs such as `PUT` and `DELETE` in place of the standard HTML methods `GET` and `POST`.
 - [PostgreSQL](https://www.postgresql.org/) - An open-source relational database utilizing the standard SQL syntax.
 
+### APIs
+- Movies: [TMDB](https://www.themoviedb.org/documentation/api)
+- Books: [Google Books](https://developers.google.com/books/docs/overview)
+- Recipes: [EDAMAM](https://developer.edamam.com/edamam-recipe-api)
+- User Icons: [Adorable Avatars](http://avatars.adorable.io/) - future implementation
+- COVID Data:[The COVID Tracking Project](https://covidtracking.com/api) 
+### Custom Fonts
+- [Google Fonts](https://fonts.google.com/)
+  - Press Start 2p
+  - Roboto
+### Links 
+- [Just watch](https://www.justwatch.com/) - Link with locations to watch selected movies
+- [Amazon](https://www.amazon.com/) - Link to Amazon search page for selected books
+
 [Return to the top](#Table-of-Contents)
 
 <hr>
@@ -193,24 +207,7 @@ These are the wire frames we used when designing the front-end of this web appli
 
 <hr>
 
-## Problem Domain: 
-
-## Credits and Collaborations
-### API's used: 
-- Movies: [TMDB](https://www.themoviedb.org/documentation/api)
-- Books: [Google Books](https://developers.google.com/books/docs/overview)
-- Recipes: [EDAMAM](https://developer.edamam.com/edamam-recipe-api)
-- User Icons: [Adorable Avatars](http://avatars.adorable.io/)
-- COVID Data:[The COVID Tracking Project](https://covidtracking.com/api) 
-### Fonts:
-- [Google Fonts](https://fonts.google.com/)
-  - Press Start 2p and Roboto
-### Reset CSS:
-- [Reset CSS](http://meyerweb.com/eric/tools/css/reset/)
-### Links 
-- [Just watch for Where to Watch Movies](https://www.justwatch.com/)
-- [Purchase on Amazon](https://www.amazon.com/)
-## Quarantine Survival Kit: 
+## Problem Domain:  
 
 *As a user I would like to have a clean, simple UI where I can enter a category that I want to learn more about and be presented with a random selection of things based off that category: ie: workout routines, movies, wines, travel destinations, books, new hobby, meetups, recipes based on place*
 
