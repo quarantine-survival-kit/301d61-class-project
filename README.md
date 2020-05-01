@@ -182,7 +182,6 @@ This diagram is a visual representation of the data structure for this project.
 
 ![img](assets/diagrams/Database-Relationship-Diagram.jpg)
 
-
 ### Data Flow
 
 This is a visual representation of our MVC process.
