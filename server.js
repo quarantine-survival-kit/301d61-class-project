@@ -22,6 +22,8 @@ const book = require('./modules/books');
 const movie = require('./modules/movies');
 var cookieParser = require('cookie-parser');
 const favorites = require('./modules/favorites');
+const superagent = require('superagent');
+const errorHandler = require('./modules/error');
 
 // Creates express instance and EJS setup
 app.set('view engine', 'ejs');
@@ -48,7 +50,17 @@ app.get('/aboutUs', (request, response) => {
 });
 
 app.get('/home', (request, response) => {
-  response.render('index');
+  const url = 'https://joke3.p.rapidapi.com/v1/joke';
+  superagent.get(url)
+    .set({ 'x-rapidapi-host': 'joke3.p.rapidapi.com', 'x-rapidapi-key': '4b2d450862msha820ae29636b083p19f7d9jsnd51b7b971fd1'})
+    .then(jokeResponse => {
+      const data = JSON.parse(jokeResponse.text).content;
+      response.render('index', { joke: data});
+    })
+    .catch(error => {
+      console.log(error);
+      errorHandler.errorHandler();
+    });
 });
 
 app.get('/favorites', (request, response) => {
