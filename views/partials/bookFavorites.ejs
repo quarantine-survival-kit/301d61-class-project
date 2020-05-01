@@ -6,7 +6,7 @@
     <h3> <%= element.author %> </h3>
     <a href="<%= element.retail_link %> ">Buy On Amazon</a>
     <form class='hiddenData bookForm' action='/deleteBook' method="POST">
-      <input class="info" type="hidden" name="title" value=' <%= element.title %>'>
+      <input class="info" type="hidden" name="id" value="<%= element.id %>">
       <button type='submit' class="delete-btn">Delete your book!</button>
      </form>
   </div>

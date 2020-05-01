@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P|Roboto:500&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" type="text/css" href="/CSS/styles.css">
   <title>Quarantine Survival Kit</title>
+  <link rel="shortcut icon" type="image/png" href="./assets/favicon.png">
 </head>
 <body>
   <header>
@@ -22,7 +23,7 @@
     <img id="heart" src="/assets/heart.svg" alt="heart">
   </article>
 </a>
-<form action="/clearCookie" method="POST">
+<form id="logout" action="/clearCookie" method="POST">
   <button type="submit">logout</button>
 </form>
 </header>
@@ -46,7 +47,7 @@
 
   </article>
 
-  <article id='recipesDetails' class="details">
+    <article id='recipesDetails' class="details">
     <h1>RECIPES!</h1>
     <div class="holder">
       <%- include('./partials/recipeDetails') %>

@@ -9,7 +9,7 @@
   crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P|Roboto:500&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" type="text/css" href="/CSS/styles.css">
-  
+  <link rel="shortcut icon" type="image/png" href="./assets/favicon.png">
   <title>Quarantine Survival Kit</title>
 </head>
 <body>
@@ -24,14 +24,15 @@
     <img id="heart" src="/assets/heart.svg" alt="heart">
   </article>
 </a>
-<form action="/clearCookie" method="POST">
+<form id="logout" action="/clearCookie" method="POST">
   <button type="submit">logout</button>
 </form>
 </header>
   
 <%- include('./partials/ticker') %>
 
-  <main> 
+  <main>
+
 <article id="movies">
   <svg id="movieImage" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
   width="50" height="50"
@@ -72,9 +73,11 @@ style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-w
   </form>
 </article>
 
+
  </main>
 
 <footer>
+  <p><%= joke %> </p>
   <div id='darkModeSwitch'>
     <div< id="darkMode">
 <div id="switch"></div>
