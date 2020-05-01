@@ -73,7 +73,6 @@ exports.getFavoritesMoviesFromDB = function (request, response, sqlQuery, sqlVal
 exports.getFavoritesBooksFromDB = function (request, response, sqlQuery, sqlValues ) {
   dbClient.query(sqlQuery, sqlValues)
     .then(data => {
-      console.log(data.rows);
       if (data.rows.length > 0) {
         response.render('favorites', { books: data.rows });
       } else {
